@@ -1,0 +1,24 @@
+project:
+  type: website
+  output-dir: ../docs
+
+website:
+  title: "🇺🇸 2024 US Primaries Dashboard"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Spending
+      - targeting.qmd
+      - impressions.qmd
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/favstats
+      - icon: twitter
+        href: https://twitter.com/favstats
+    
+format:
+  html:
+    theme: litera
+    
