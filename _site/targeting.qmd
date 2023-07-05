@@ -723,7 +723,7 @@ contested_dat <- interest_targeting %>%
 }
 
   
-get_contested_graph(election_dat30, 1000)
+get_contested_graph(election_dat30, 5000)
 ```
 
 

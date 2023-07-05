@@ -80,8 +80,8 @@ function off() {
 
 
 ```{r setup, include=FALSE}
-election_title <- "2023 Montenegrin parliamentary election"
-the_country <- "Montenegro"
+election_title <- "2023-24 US Primaries election"
+the_country <- "US"
 
 
 ## Global options
