@@ -9,7 +9,6 @@ website:
       - href: index.qmd
         text: Spending
       - targeting.qmd
-      - impressions.qmd
       - href: about.qmd
         text: About
     right:
