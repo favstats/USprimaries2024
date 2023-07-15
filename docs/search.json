@@ -102,14 +102,14 @@
     "href": "targeting.html#spending-per-targeting-criteria",
     "title": "Targeting",
     "section": "Spending per Targeting Criteria",
-    "text": "Spending per Targeting Criteria\nHow much did campaigns spend on different targeting methods? The graphs below show spending overall across all parties and by party.\n\nNote: targeting criteria can overlap so the percentages do not sum up to 100%.\n\n\nJun 3rd - Jul 2nd 2023 (Last 30 days)Jun 26th - Jul 2nd 2023 (Last 7 days)\n\n\n\nOverallBy Party\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOverallBy Party"
+    "text": "Spending per Targeting Criteria\nHow much did campaigns spend on different targeting methods? The graphs below show spending overall across all parties and by Candidate.\n\nNote: targeting criteria can overlap so the percentages do not sum up to 100%.\n\n\nJun 3rd - Jul 2nd 2023 (Last 30 days)Jun 26th - Jul 2nd 2023 (Last 7 days)\n\n\n\nOverallBy Candidate\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOverallBy Candidate"
   },
   {
     "objectID": "targeting.html#top-targeted-detailed-audiences",
     "href": "targeting.html#top-targeted-detailed-audiences",
     "title": "Targeting",
     "section": "Top Targeted (Detailed) Audiences",
-    "text": "Top Targeted (Detailed) Audiences\nHere, we show the top targeted audiences for each party for the “detailed” targeting that Meta offers (ranked by amount of Euro spend). Most (but not all) of these audiences are “interest” audiences, i.e. the parties targeted people interested in “Books” or “Politics”.\n\nJun 3rd - Jul 2nd 2023 (Last 30 days)Jun 26th - Jul 2nd 2023 (Last 7 days)"
+    "text": "Top Targeted (Detailed) Audiences\nHere, we show the top targeted audiences for each Candidate for the “detailed” targeting that Meta offers (ranked by amount of Euro spend). Most (but not all) of these audiences are “interest” audiences, i.e. the parties targeted people interested in “Books” or “Politics”.\n\nJun 3rd - Jul 2nd 2023 (Last 30 days)Jun 26th - Jul 2nd 2023 (Last 7 days)"
   },
   {
     "objectID": "targeting.html#top-contested-audiences",
@@ -123,7 +123,7 @@
     "href": "targeting.html#geographical-targeting",
     "title": "Targeting",
     "section": "Geographical Targeting",
-    "text": "Geographical Targeting\nThe graphs below show various kinds of location targeting that parties engaged in on Meta platforms. The bigger the area the more money was spend by the party on targeting this location.\n\nJun 3rd - Jul 2nd 2023 (Last 30 days)\n\n\n\nRegionsCities"
+    "text": "Geographical Targeting\nThe graphs below show various kinds of location targeting that parties engaged in on Meta platforms. The bigger the area the more money was spend by the Candidate on targeting this location.\n\nJun 3rd - Jul 2nd 2023 (Last 30 days)\n\n\n\nRegionsCities"
   },
   {
     "objectID": "targeting.html#geographical-exclusion",
@@ -137,28 +137,28 @@
     "href": "targeting.html#age-targeting",
     "title": "Targeting",
     "section": "Age Targeting",
-    "text": "Age Targeting\nThe graphs below show targeting by age groups and how much percentage of party budgets were spent on them.\n\nNote: targeting criteria can overlap so the percentages do not sum up to 100%.\n\n\nJun 3rd - Jul 2nd 2023 (Last 30 days)Jun 26th - Jul 2nd 2023 (Last 7 days)"
+    "text": "Age Targeting\nThe graphs below show targeting by age groups and how much percentage of Candidate budgets were spent on them.\n\nNote: targeting criteria can overlap so the percentages do not sum up to 100%.\n\n\nJun 3rd - Jul 2nd 2023 (Last 30 days)Jun 26th - Jul 2nd 2023 (Last 7 days)"
   },
   {
     "objectID": "targeting.html#gender-targeting",
     "href": "targeting.html#gender-targeting",
     "title": "Targeting",
     "section": "Gender Targeting",
-    "text": "Gender Targeting\nThe graphs below show targeting by gender and how much percentage of party budgets were spent on them.\n\nNote: targeting criteria can overlap so the percentages do not sum up to 100%.\n\n\nJun 3rd - Jul 2nd 2023 (Last 30 days)Jun 26th - Jul 2nd 2023 (Last 7 days)"
+    "text": "Gender Targeting\nThe graphs below show targeting by gender and how much percentage of Candidate budgets were spent on them.\n\nNote: targeting criteria can overlap so the percentages do not sum up to 100%.\n\n\nJun 3rd - Jul 2nd 2023 (Last 30 days)Jun 26th - Jul 2nd 2023 (Last 7 days)"
   },
   {
     "objectID": "targeting.html#education-targeting",
     "href": "targeting.html#education-targeting",
     "title": "Targeting",
     "section": "Education Targeting",
-    "text": "Education Targeting\nThe graphs below show targeting by education levels and how much percentage of party budgets were spent on them.\n\nJun 3rd - Jul 2nd 2023 (Last 30 days)Jun 26th - Jul 2nd 2023 (Last 7 days)"
+    "text": "Education Targeting\nThe graphs below show targeting by education levels and how much percentage of Candidate budgets were spent on them.\n\nJun 3rd - Jul 2nd 2023 (Last 30 days)Jun 26th - Jul 2nd 2023 (Last 7 days)"
   },
   {
     "objectID": "targeting.html#job-targeting",
     "href": "targeting.html#job-targeting",
     "title": "Targeting",
     "section": "Job Targeting",
-    "text": "Job Targeting\nThe graphs below show targeting by job (sectors) and how much percentage of party budgets were spent on them.\n\nNote: targeting criteria can overlap so the percentages do not sum up to 100%.\n\n\nJun 3rd - Jul 2nd 2023 (Last 30 days)"
+    "text": "Job Targeting\nThe graphs below show targeting by job (sectors) and how much percentage of Candidate budgets were spent on them.\n\nNote: targeting criteria can overlap so the percentages do not sum up to 100%.\n\n\nJun 3rd - Jul 2nd 2023 (Last 30 days)"
   },
   {
     "objectID": "index.html#daily-spend",

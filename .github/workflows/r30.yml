@@ -1,0 +1,50 @@
+name: "7 Timeframe"
+on:
+  schedule:
+    # Runs "at minute 55 past every hour" (see https://crontab.guru)
+    - cron: '0 13 * * *'
+  push:
+    branches:
+      - main
+
+jobs:
+  update-data:
+    name: Seven Timeframe
+    runs-on: ubuntu-latest
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
+    steps:
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: 'release'
+      - name: Setup - Checkout repo
+        uses: actions/checkout@v3
+      - name: Apt-get needed things
+        run: |
+          sudo apt-get install --no-install-recommends -y \
+          libssl-dev \
+          libcurl4-openssl-dev \
+          libxml2-dev \
+          libharfbuzz-dev \
+          libfribidi-dev
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: "Install Packages"
+        run: |
+          install.packages('httr')
+          install.packages('jsonlite')
+          install.packages('janitor')
+          install.packages('quarto')
+          install.packages('tidyverse')
+          install.packages('highcharter')
+          install.packages('gt')
+        shell: Rscript {0}
+      - name: "Script - Run"
+        run: Rscript 'retrieve_targeting_data.R'
+      - name: "Script - Update Dashboard"
+        run: Rscript 'start.R'
+      - name: "Commit"
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Script Routine Seven
