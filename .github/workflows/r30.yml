@@ -39,6 +39,8 @@ jobs:
       - name: "Install Packages"
         run: |
           install.packages('httr')
+          install.packages('remotes')
+          remotes::install_github('hadley/emo')
           install.packages('jsonlite')
           install.packages('janitor')
           install.packages('quarto')
