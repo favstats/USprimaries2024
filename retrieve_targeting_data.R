@@ -6,6 +6,68 @@ source("utils.R")
 library(httr)
 library(tidyverse)
 
+walk_progress <- function(.x, .f, ...) {
+  .f <- purrr::as_mapper(.f, ...)
+  pb <- progress::progress_bar$new(
+    total = length(.x), 
+    format = " (:spin) [:bar] :percent | :current / :total | eta: :eta",
+    # format = " downloading [:bar] :percent eta: :eta",
+    force = TRUE)
+  
+  f <- function(...) {
+    pb$tick()
+    .f(...)
+  }
+  purrr::walk(.x, f, ...)
+}
+
+map_progress <- function(.x, .f, ...) {
+  .f <- purrr::as_mapper(.f, ...)
+  pb <- progress::progress_bar$new(
+    total = length(.x), 
+    format = " (:spin) [:bar] :percent | :current / :total | eta: :eta",
+    # format = " downloading [:bar] :percent eta: :eta",
+    force = TRUE)
+  
+  f <- function(...) {
+    pb$tick()
+    .f(...)
+  }
+  purrr::map(.x, f, ...)
+}
+
+map_dfr_progress <- function(.x, .f, ...) {
+  .f <- purrr::as_mapper(.f, ...)
+  pb <- progress::progress_bar$new(
+    total = length(.x), 
+    format = " (:spin) [:bar] :percent | :current / :total | eta: :eta",
+    # format = " downloading [:bar] :percent eta: :eta",
+    force = TRUE)
+  
+  f <- function(...) {
+    pb$tick()
+    .f(...)
+  }
+  purrr::map_dfr(.x, f, ...)
+}
+
+map_chr_progress <- function(.x, .f, ...) {
+  .f <- purrr::as_mapper(.f, ...)
+  pb <- progress::progress_bar$new(
+    total = length(.x), 
+    format = " (:spin) [:bar] :percent | :current / :total | eta: :eta",
+    # format = " downloading [:bar] :percent eta: :eta",
+    force = TRUE)
+  
+  f <- function(...) {
+    pb$tick()
+    .f(...)
+  }
+  purrr::map_chr(.x, f, ...)
+}
+
+
+
 tstamp <- Sys.time()
 
 write_lines(lubridate::as_date(tstamp), "tstamp.txt")
