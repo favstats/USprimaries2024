@@ -8,6 +8,12 @@ on:
       - main
 
 jobs:
+  quarto-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: quarto-dev/quarto-actions/setup@v2
+      - run: |
+          quarto --version
   update-data:
     name: Update Dashboard
     runs-on: ubuntu-latest
