@@ -8,6 +8,10 @@ library(tidyverse)
 
 tstamp <- Sys.time()
 
+write_lines(lubridate::as_date(tstamp), "tstamp.txt")
+
+dir.create(paste0("historic/", lubridate::as_date(tstamp)), recursive = T)
+
 
 source("utils.R")
 
@@ -114,7 +118,11 @@ da7  <- dir("targeting/7", full.names = T) %>%
 
 saveRDS(da30, "data/election_dat30.rds")
 saveRDS(da7, "data/election_dat7.rds")
-# 
+
+saveRDS(da30, paste0("historic/", lubridate::as_date(tstamp), "/election_dat30.rds"))
+saveRDS(da7, paste0("historic/", lubridate::as_date(tstamp), "/election_dat7.rds"))
+
+
 # da30 %>%
 #   # filter(party == "OTHER") %>% 
 #   # # distinct(page_id, page_name) %>% 

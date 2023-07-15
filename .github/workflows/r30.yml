@@ -9,7 +9,7 @@ on:
 
 jobs:
   update-data:
-    name: Seven Timeframe
+    name: Update Dashboard
     runs-on: ubuntu-latest
     permissions:
       # Give the default GITHUB_TOKEN write permission to commit and push the
@@ -38,6 +38,8 @@ jobs:
           install.packages('quarto')
           install.packages('tidyverse')
           install.packages('highcharter')
+          install.packages('openxlsx')
+          install.packages('lubridate')
           install.packages('gt')
         shell: Rscript {0}
       - name: "Script - Run"
