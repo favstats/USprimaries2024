@@ -12,9 +12,9 @@ jobs:
     name: Update Dashboard
     runs-on: ubuntu-latest
     permissions:
-      # Give the default GITHUB_TOKEN write permission to commit and push the
-      # added or changed files to the repository.
       contents: write
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: quarto-dev/quarto-actions/setup@v2
       - name: Add Quarto to PATH
