@@ -51,6 +51,7 @@ jobs:
           install.packages('openxlsx')
           install.packages('lubridate')
           install.packages('gt')
+          install.packages('gtExtra')
         shell: Rscript {0}
       - name: "Script - Run"
         run: Rscript 'retrieve_targeting_data.R'
