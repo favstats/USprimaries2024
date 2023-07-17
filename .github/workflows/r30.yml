@@ -42,6 +42,8 @@ jobs:
           install.packages('remotes')
           remotes::install_github('hadley/emo')
           install.packages('shiny')
+          install.packages('scales')
+          install.packages('treemap')
           install.packages('here')
           install.packages('jsonlite')
           install.packages('janitor')
