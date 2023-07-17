@@ -145,8 +145,6 @@ gg <- coltototal30 %>%
     #                               "Terzo Polo",
     #                               "Coalizione di centro-destra")))
 
-library(tidytext)
-
 library(highcharter)
 
 the_order <- gg %>%
