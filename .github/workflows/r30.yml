@@ -44,6 +44,7 @@ jobs:
           install.packages('shiny')
           install.packages('scales')
           install.packages('treemap')
+          install.packages('htmltools')
           install.packages('here')
           install.packages('jsonlite')
           install.packages('janitor')
