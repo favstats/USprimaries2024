@@ -90,13 +90,13 @@ color_dat <- election_dat30 %>%
   distinct()
 ```
 
-This section shows spening per *targeting criteria* used by political parties to reach citizens in the run-up to the `r election_title` for the latest available data.
+This section shows spening per *targeting criteria* used by political candidates to reach citizens in the run-up to the `r election_title` for the latest available data.
 
 
 
 ## Spending per Targeting Criteria 
 
-How much did campaigns spend on different targeting methods? The graphs below show spending *overall* across all parties and *by Candidate*.
+How much did campaigns spend on different targeting methods? The graphs below show spending *overall* across all candidates and *by candidate*.
 
 > Note: targeting criteria can overlap so the percentages do not sum up to 100%.
 
@@ -421,7 +421,7 @@ tags$div(class = "container", do.call(tags$div, rows))
 
 ## Top Targeted (Detailed) Audiences 
 
-Here, we show the *top targeted audiences* for each Candidate for the "detailed" targeting that Meta offers (ranked by amount of Euro spend). Most (but not all) of these audiences are “interest” audiences, i.e. the parties targeted people interested in “Books” or “Politics”.
+Here, we show the *top targeted audiences* for each Candidate for the "detailed" targeting that Meta offers (ranked by amount of Euro spend). Most (but not all) of these audiences are “interest” audiences, i.e. the candidates targeted people interested in “Books” or “Politics”.
 
 ::: {.panel-tabset}
 
@@ -617,7 +617,7 @@ tags$div(class = "container", do.call(tags$div, rows))
 
 ## Top Contested Audiences 
 
-Here, we show the *top most contested audiences*, i.e. where all parties have spent considerable amounts of money competing to reach voters with the same interests. 
+Here, we show the *top most contested audiences*, i.e. where all candidates have spent considerable amounts of money competing to reach voters with the same interests. 
 
 
 ::: {.panel-tabset}
@@ -650,7 +650,7 @@ interest_targeting <-  ppp %>%
 
 contested_dat <- interest_targeting %>% 
   filter(!is_exclusion) %>% 
-  # filter(total_spend >= 40000) %>% 
+  # filter(total_spend >= 50000) %>% 
   filter(total_spend >= minamount) %>%
   add_count(value) %>% 
   filter(n >= 3) %>% 
@@ -741,7 +741,7 @@ get_contested_graph(election_dat7, 500)
 
 ## Geographical Targeting 
 
-The graphs below show various kinds of *location targeting* that parties engaged in on Meta platforms. The bigger the area the more money was spend by the Candidate on targeting this location.
+The graphs below show various kinds of *location targeting* that candidates engaged in on Meta platforms. The bigger the area the more money was spend by the Candidate on targeting this location.
 
 
 ::: {.panel-tabset}
@@ -864,7 +864,7 @@ tm <- treemap(region_dat, index = c("Candidate", "region"),
 
 ## Geographical Exclusion 
 
-On Meta, political parties can also **exclude** certain geographical units. The graphs below show which locations were excluded from seeing political advertisements and how much money the parties spend on these ads. The bigger the area the more money was spend on ads excluding this location.
+On Meta, political candidates can also **exclude** certain geographical units. The graphs below show which locations were excluded from seeing political advertisements and how much money the candidates spend on these ads. The bigger the area the more money was spend on ads excluding this location.
 
 
 ::: {.panel-tabset}
