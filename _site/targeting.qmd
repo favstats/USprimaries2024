@@ -715,7 +715,7 @@ contested_dat <- interest_targeting %>%
       enabled = TRUE,
       text = "Source: Meta Ad Library and data compiled by Who Targets Me. Data Viz: Fabio Votta (@favstats)."
     )    %>%
-  hc_annotations(list(labels = annotations)) %>%
+  # hc_annotations(list(labels = annotations)) %>%
     hc_colors(hc_dat %>% distinct(Candidate, .keep_all = T) %>%  filter(Candidate %in% contested_dat$Candidate) %>%  arrange(Candidate) %>% pull(colors))  %>%
     hc_exporting(
       enabled = TRUE
