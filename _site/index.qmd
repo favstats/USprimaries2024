@@ -236,7 +236,7 @@ add_ribbons2 <- function(x, adv, col) {
 ```
 
 
-This section shows *daily* and *total spending* of political parties in the run-up to the `r election_title` for the latest available data.
+This section shows *daily* and *total spending* of political candidates in the run-up to the `r election_title` for the latest available data.
 
 ## Daily Spend
 
@@ -402,7 +402,7 @@ hc_data %>%
 ### `r last30days_string` (Last 30 days)
 
 
-In total, political parties spent `r paste0(currency_symbol, scales::comma_format()(sum30$total_spend_formatted))` and ran `r sum30$total_num_ads` ads on Meta in this period.
+In total, political candidates spent `r paste0(currency_symbol, scales::comma_format()(sum30$total_spend_formatted))` and ran `r sum30$total_num_ads` ads on Meta in this period.
 
 
 ```{r}
@@ -480,7 +480,7 @@ eval(parse(text = paste0("gt(the_table30, rowname_col = 'Candidate_col') %>% fmt
 
 ### `r last7days_string` (Last 7 days)
 
-In total, political parties spent `r paste0(currency_symbol,scales::comma_format()(sum7$total_spend_formatted))` and ran `r sum7$total_num_ads` ads on Meta in this period
+In total, political candidates spent `r paste0(currency_symbol,scales::comma_format()(sum7$total_spend_formatted))` and ran `r sum7$total_num_ads` ads on Meta in this period
 
 
 
