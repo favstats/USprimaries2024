@@ -293,3 +293,150 @@ scale_color_parties <- function(...){
   )
 }
 
+
+walk_progress <- function(.x, .f, ...) {
+  .f <- purrr::as_mapper(.f, ...)
+  pb <- progress::progress_bar$new(
+    total = length(.x), 
+    format = " (:spin) [:bar] :percent | :current / :total | eta: :eta",
+    # format = " downloading [:bar] :percent eta: :eta",
+    force = TRUE)
+  
+  f <- function(...) {
+    pb$tick()
+    .f(...)
+  }
+  purrr::walk(.x, f, ...)
+}
+
+map_progress <- function(.x, .f, ...) {
+  .f <- purrr::as_mapper(.f, ...)
+  pb <- progress::progress_bar$new(
+    total = length(.x), 
+    format = " (:spin) [:bar] :percent | :current / :total | eta: :eta",
+    # format = " downloading [:bar] :percent eta: :eta",
+    force = TRUE)
+  
+  f <- function(...) {
+    pb$tick()
+    .f(...)
+  }
+  purrr::map(.x, f, ...)
+}
+
+map_dfr_progress <- function(.x, .f, ...) {
+  .f <- purrr::as_mapper(.f, ...)
+  pb <- progress::progress_bar$new(
+    total = length(.x), 
+    format = " (:spin) [:bar] :percent | :current / :total | eta: :eta",
+    # format = " downloading [:bar] :percent eta: :eta",
+    force = TRUE)
+  
+  f <- function(...) {
+    pb$tick()
+    .f(...)
+  }
+  purrr::map_dfr(.x, f, ...)
+}
+
+map_chr_progress <- function(.x, .f, ...) {
+  .f <- purrr::as_mapper(.f, ...)
+  pb <- progress::progress_bar$new(
+    total = length(.x), 
+    format = " (:spin) [:bar] :percent | :current / :total | eta: :eta",
+    # format = " downloading [:bar] :percent eta: :eta",
+    force = TRUE)
+  
+  f <- function(...) {
+    pb$tick()
+    .f(...)
+  }
+  purrr::map_chr(.x, f, ...)
+}
+
+prepp <- function(tf) {
+  
+  unlink(paste0("targeting/", tf), recursive = T, force = T)
+  
+  dir.create(paste0("targeting/", tf))
+  
+  write_lines("_", paste0("targeting/", tf, "/", "_"))
+  
+  # }
+  
+}
+
+
+combine_em <- function(da30) {
+  
+  tf <- da30 %>% arrange(tframe) %>% slice(1) %>% pull(tframe)
+  
+  minimum_date <- dir("historic", recursive = T) %>%
+    keep(~str_detect(.x, paste0(tf, "\\.rds"))) %>% 
+    str_remove("/.*") %>%
+    as.Date() %>%
+    min(na.rm = T)
+  
+  latest_ds <- da30 %>% arrange(ds) %>% slice(1) %>% pull(ds) %>% as.Date()
+  
+  begintf <- as.Date(latest_ds) - lubridate::days(tf)
+  
+  date_vector <- vector()
+  current_date <- latest_ds
+  index <- 1
+  
+  while(current_date > minimum_date) {
+    
+    date_vector[index] <- current_date
+    
+    current_date <- current_date - lubridate::days(tf)
+    
+    index <- index + 1
+    
+  }
+  
+  if(length(date_vector != 0)){
+    
+    
+    combined_dat <- paste0("historic/", as_date(date_vector), "/", tf, ".rds") %>%
+      map_dfr(~{
+        if(!file.exists(.x)){
+          return(tibble(ds = as.character(begintf), missing_report = T))
+        } else {
+          readRDS(.x)
+        }
+        
+      })
+    
+    saveRDS(combined_dat, data = paste0("data/combined_dat", tf,  ".rds"))
+    
+    aggr <- combined_dat  %>%
+      mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
+      mutate(total_spend = ifelse(total_spend == 50, 50, total_spend)) %>%
+      mutate(total_spend = total_spend * total_spend_pct) %>%
+      group_by(internal_id, value, type, location_type, detailed_type, custom_audience_type, is_exclusion) %>%
+      summarize(total_spend = sum(total_spend),
+                num_ads = sum(num_ads),
+                num_obfuscated = sum(num_obfuscated)) %>%
+      ungroup()
+    
+    saveRDS(aggr, data = paste0("data/election_dat_aggr", tf,  ".rds"))
+    
+    
+    
+    
+  }
+  
+  
+  # if(new_ds == latest_ds){
+  
+  unlink(paste0("targeting/", tf), recursive = T, force = T)
+  
+  dir.create(paste0("targeting/", tf))
+  
+  write_lines("_", paste0("targeting/", tf, "/", "_"))
+  
+  # }
+  
+}
+

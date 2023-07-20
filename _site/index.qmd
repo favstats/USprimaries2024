@@ -119,6 +119,10 @@ source("../utils.R")
 
 
 ```{r}
+election_dat90 <- readRDS("../data/election_dat90.rds") %>% 
+    rename(internal_id = page_id,
+           Candidate = party) 
+
 election_dat30 <- readRDS("../data/election_dat30.rds") %>% 
     rename(internal_id = page_id,
            Candidate = party) # %>% 
@@ -148,10 +152,12 @@ election_dat7 <- readRDS("../data/election_dat7.rds") %>%
 fin <- (as.Date(election_dat30$ds[1])-lubridate::days(1))
 begin7 <- fin-lubridate::days(6)
 begin30 <- fin-lubridate::days(29)
+begin90 <- fin-lubridate::days(89)
 
 
 last7days_string <- paste0(create_date(begin7), " - ", paste(create_date(fin), lubridate::year(fin)))
 last30days_string <- paste0(create_date(begin30), " - ", paste(create_date(fin), lubridate::year(fin)))
+last90days_string <- paste0(create_date(begin90), " - ", paste(create_date(fin), lubridate::year(fin)))
 
 
 the_currency <- election_dat30 %>% 
@@ -190,6 +196,12 @@ total_spend_id <- election_dat30 %>%
 
 
 ```{r}
+sum90 <- election_dat90 %>% 
+    filter(main_currency == the_currency) %>% 
+    distinct(internal_id, .keep_all = T) %>% 
+    summarize(total_spend_formatted = sum(total_spend_formatted),
+              total_num_ads = sum(total_num_ads))
+
 sum30 <- election_dat30 %>% 
     filter(main_currency == the_currency) %>% 
     distinct(internal_id, .keep_all = T) %>% 
@@ -395,18 +407,7 @@ hc_data %>%
 
 ## Total Spend
 
-
-::: {.panel-tabset}
-
-
-### `r last30days_string` (Last 30 days)
-
-
-In total, political candidates spent `r paste0(currency_symbol, scales::comma_format()(sum30$total_spend_formatted))` and ran `r sum30$total_num_ads` ads on Meta in this period.
-
-
 ```{r}
-
 get_table_dat <- function(x, var) {
     
 
@@ -459,6 +460,44 @@ x %>%
     slice(1:(n()-1)) 
     
 }
+
+```
+
+
+
+::: {.panel-tabset}
+
+### `r last90days_string` (Last 90 days)
+
+In total, political candidates spent `r paste0(currency_symbol, scales::comma_format()(sum90$total_spend_formatted))` and ran `r sum90$total_num_ads` ads on Meta in this period.
+
+
+```{r}
+
+the_table90 <- get_table_dat(election_dat90, Candidate) %>% 
+  arrange(desc(parse_number(`Total Spend`))) 
+
+
+add_ribbons_code <- the_table90 %>%
+  left_join(color_dat %>% mutate(Candidate_col = Candidate)) %>% 
+  mutate(ribbons_code = sprintf("add_ribbons(\"%s\", \"%s\")", Candidate_col, colors)) %>%
+  pull(ribbons_code) %>%
+  # paste(collapse = "\n") %>%
+  paste(collapse = "%>%")  # Add pipe after each ribbon
+
+eval(parse(text = paste0("gt(the_table90, rowname_col = 'Candidate_col') %>% fmt_markdown(columns = everything()) %>% cols_align(align = \"center\") %>% gtExtras::gt_theme_538() %>% ", add_ribbons_code)))
+```
+
+
+
+### `r last30days_string` (Last 30 days)
+
+
+In total, political candidates spent `r paste0(currency_symbol, scales::comma_format()(sum30$total_spend_formatted))` and ran `r sum30$total_num_ads` ads on Meta in this period.
+
+
+```{r}
+
 
 the_table30 <- get_table_dat(election_dat30, Candidate) %>% 
   arrange(desc(parse_number(`Total Spend`))) 
