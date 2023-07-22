@@ -411,17 +411,16 @@ combine_em <- function(da30) {
     saveRDS(combined_dat, file = paste0("data/combined_dat", tf,  ".rds"))
     
     aggr <- combined_dat  %>%
-      mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
+      mutate(total_spend = readr::parse_number(as.character(total_spend_formatted))) %>%
       mutate(total_spend = ifelse(total_spend == 50, 50, total_spend)) %>%
       mutate(total_spend = total_spend * total_spend_pct) %>%
-      group_by(internal_id, value, type, location_type, detailed_type, custom_audience_type, is_exclusion) %>%
+      group_by(page_id, value, type, location_type, detailed_type, custom_audience_type, is_exclusion) %>%
       summarize(total_spend = sum(total_spend),
                 num_ads = sum(num_ads),
                 num_obfuscated = sum(num_obfuscated)) %>%
       ungroup()
     
     saveRDS(aggr, file = paste0("data/election_dat_aggr", tf,  ".rds"))
-    
     
     
     
