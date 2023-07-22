@@ -408,7 +408,7 @@ combine_em <- function(da30) {
         
       })
     
-    saveRDS(combined_dat, data = paste0("data/combined_dat", tf,  ".rds"))
+    saveRDS(combined_dat, file = paste0("data/combined_dat", tf,  ".rds"))
     
     aggr <- combined_dat  %>%
       mutate(total_spend = readr::parse_number(total_spend_formatted)) %>%
@@ -420,7 +420,7 @@ combine_em <- function(da30) {
                 num_obfuscated = sum(num_obfuscated)) %>%
       ungroup()
     
-    saveRDS(aggr, data = paste0("data/election_dat_aggr", tf,  ".rds"))
+    saveRDS(aggr, file = paste0("data/election_dat_aggr", tf,  ".rds"))
     
     
     
