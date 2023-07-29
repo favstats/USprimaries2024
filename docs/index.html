@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.189">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -55,10 +55,11 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
-<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
 <script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
 <script src="site_libs/proj4js-2.3.15/proj4.js"></script>
 <link href="site_libs/highcharts-9.3.1/css/motion.css" rel="stylesheet">
@@ -116,34 +117,39 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">🇺🇸 2024 US Primaries Dashboard</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">Spending</a>
+    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Spending</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./targeting.html">Targeting</a>
+    <a class="nav-link" href="./targeting.html" rel="" target="">
+ <span class="menu-text">Targeting</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">About</a>
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/favstats"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/favstats" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/favstats"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/favstats" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -166,6 +172,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -237,51 +244,48 @@ function off() {
 </script>
 
 </div>
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
 <p>This section shows <em>daily</em> and <em>total spending</em> of political candidates in the run-up to the 2023-24 US Primaries election for the latest available data.</p>
 <section id="daily-spend" class="level2">
 <h2 class="anchored" data-anchor-id="daily-spend">Daily Spend</h2>
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="htmlwidget-17a7343d45ff9a8099f5" style="width:100%;height:480px;" class="highchart html-widget"></div>
-<script type="application/json" data-for="htmlwidget-17a7343d45ff9a8099f5">{"x":{"hc_opts":{"chart":{"reflow":true,"events":{"load":"function() {\n  var chart = this;\n  chart.series[0].setVisible(false)\n  chart.series[1].setVisible(false)\n  chart.series[2].setVisible(false)\n  chart.series[3].setVisible(false)\n  chart.series[4].setVisible(false)\n  }"}},"title":{"text":null},"yAxis":{"title":{"text":"Daily Spend"},"type":"linear"},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":true},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}},"area":{"stacking":"normal","lineWidth":1,"marker":{"enabled":false}}},"series":[{"name":"Chris Christie","data":[{"date_produced":"2023-07-25","Candidate":"Chris Christie","spend":null,"total_spend":null,"colors":"#54a625","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#54a625"},{"date_produced":"2023-07-26","Candidate":"Chris Christie","spend":null,"total_spend":null,"colors":"#54a625","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#54a625"}],"type":"area"},{"name":"Donald Trump","data":[{"date_produced":"2023-07-25","Candidate":"Donald Trump","spend":null,"total_spend":null,"colors":"#c70039","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#c70039"},{"date_produced":"2023-07-26","Candidate":"Donald Trump","spend":null,"total_spend":null,"colors":"#c70039","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#c70039"}],"type":"area"},{"name":"Francis Suarez","data":[{"date_produced":"2023-07-25","Candidate":"Francis Suarez","spend":null,"total_spend":null,"colors":"#881474","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#881474"},{"date_produced":"2023-07-26","Candidate":"Francis Suarez","spend":null,"total_spend":null,"colors":"#881474","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#881474"}],"type":"area"},{"name":"Joe Biden","data":[{"date_produced":"2023-07-25","Candidate":"Joe Biden","spend":null,"total_spend":null,"colors":"#243c79","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#243c79"},{"date_produced":"2023-07-26","Candidate":"Joe Biden","spend":null,"total_spend":null,"colors":"#243c79","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#243c79"}],"type":"area"},{"name":"Marianne Williamson","data":[{"date_produced":"2023-07-25","Candidate":"Marianne Williamson","spend":null,"total_spend":null,"colors":"#33a02c","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#33a02c"}],"type":"area"},{"name":"Mike Pence","data":[{"date_produced":"2023-07-25","Candidate":"Mike Pence","spend":null,"total_spend":null,"colors":"#a0c938","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#a0c938"},{"date_produced":"2023-07-26","Candidate":"Mike Pence","spend":null,"total_spend":null,"colors":"#a0c938","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#a0c938"}],"type":"area"},{"name":"Nikki Haley","data":[{"date_produced":"2023-07-25","Candidate":"Nikki Haley","spend":null,"total_spend":null,"colors":"#ce5e13","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#ce5e13"},{"date_produced":"2023-07-26","Candidate":"Nikki Haley","spend":null,"total_spend":null,"colors":"#ce5e13","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#ce5e13"}],"type":"area"},{"name":"Perry Johnson","data":[{"date_produced":"2023-07-25","Candidate":"Perry Johnson","spend":null,"total_spend":null,"colors":"#0a7d98","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#0a7d98"},{"date_produced":"2023-07-26","Candidate":"Perry Johnson","spend":null,"total_spend":null,"colors":"#0a7d98","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#0a7d98"}],"type":"area"},{"name":"Ryan Binkley","data":[{"date_produced":"2023-07-25","Candidate":"Ryan Binkley","spend":null,"total_spend":null,"colors":"#002768","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#002768"},{"date_produced":"2023-07-26","Candidate":"Ryan Binkley","spend":null,"total_spend":null,"colors":"#002768","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#002768"}],"type":"area"},{"name":"Tim Scott","data":[{"date_produced":"2023-07-25","Candidate":"Tim Scott","spend":null,"total_spend":null,"colors":"#4bb597","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#4bb597"},{"date_produced":"2023-07-26","Candidate":"Tim Scott","spend":null,"total_spend":null,"colors":"#4bb597","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#4bb597"}],"type":"area"},{"name":"Vivek Ramaswamy","data":[{"date_produced":"2023-07-25","Candidate":"Vivek Ramaswamy","spend":null,"total_spend":null,"colors":"#b17f00","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#b17f00"},{"date_produced":"2023-07-26","Candidate":"Vivek Ramaswamy","spend":null,"total_spend":null,"colors":"#b17f00","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#b17f00"}],"type":"area"},{"name":"Will Hurd","data":[{"date_produced":"2023-07-25","Candidate":"Will Hurd","spend":null,"total_spend":null,"colors":"#c7c7c8","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#c7c7c8"},{"date_produced":"2023-07-26","Candidate":"Will Hurd","spend":null,"total_spend":null,"colors":"#c7c7c8","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#c7c7c8"}],"type":"area"}],"xAxis":{"type":"datetime","title":{"text":"Date"},"categories":null},"colors":["#54a625","#c70039","#881474","#243c79","#33a02c","#a0c938","#ce5e13","#0a7d98","#002768","#4bb597","#b17f00","#c7c7c8"],"tooltip":{"shared":true,"positioner":"function (labelWidth, labelHeight, point) {\n        return { x: 200, y: this.chart.plotTop };\n    }"}},"theme":{"chart":{"backgroundColor":"transparent"},"colors":["#7cb5ec","#434348","#90ed7d","#f7a35c","#8085e9","#f15c80","#e4d354","#2b908f","#f45b5b","#91e8e1"]},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":["hc_opts.chart.events.load","hc_opts.tooltip.positioner"],"jsHooks":[]}</script>
+<div class="highchart html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b778888c173c591b495d" style="width:100%;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-b778888c173c591b495d">{"x":{"hc_opts":{"chart":{"reflow":true,"events":{"load":"function() {\n  var chart = this;\n  chart.series[0].setVisible(false)\n  chart.series[1].setVisible(false)\n  chart.series[2].setVisible(false)\n  chart.series[3].setVisible(false)\n  chart.series[4].setVisible(false)\n  }"}},"title":{"text":null},"yAxis":{"title":{"text":"Daily Spend"},"type":"linear"},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":true},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}},"area":{"stacking":"normal","lineWidth":1,"marker":{"enabled":false}}},"series":[{"name":"Chris Christie","data":[{"date_produced":"2023-07-25","Candidate":"Chris Christie","spend":null,"total_spend":null,"colors":"#54a625","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#54a625"},{"date_produced":"2023-07-26","Candidate":"Chris Christie","spend":null,"total_spend":null,"colors":"#54a625","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#54a625"}],"type":"area"},{"name":"Donald Trump","data":[{"date_produced":"2023-07-25","Candidate":"Donald Trump","spend":null,"total_spend":null,"colors":"#c70039","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#c70039"},{"date_produced":"2023-07-26","Candidate":"Donald Trump","spend":null,"total_spend":null,"colors":"#c70039","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#c70039"}],"type":"area"},{"name":"Francis Suarez","data":[{"date_produced":"2023-07-25","Candidate":"Francis Suarez","spend":null,"total_spend":null,"colors":"#881474","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#881474"},{"date_produced":"2023-07-26","Candidate":"Francis Suarez","spend":null,"total_spend":null,"colors":"#881474","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#881474"}],"type":"area"},{"name":"Joe Biden","data":[{"date_produced":"2023-07-25","Candidate":"Joe Biden","spend":null,"total_spend":null,"colors":"#243c79","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#243c79"},{"date_produced":"2023-07-26","Candidate":"Joe Biden","spend":null,"total_spend":null,"colors":"#243c79","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#243c79"}],"type":"area"},{"name":"Marianne Williamson","data":[{"date_produced":"2023-07-25","Candidate":"Marianne Williamson","spend":null,"total_spend":null,"colors":"#33a02c","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#33a02c"}],"type":"area"},{"name":"Mike Pence","data":[{"date_produced":"2023-07-25","Candidate":"Mike Pence","spend":null,"total_spend":null,"colors":"#a0c938","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#a0c938"},{"date_produced":"2023-07-26","Candidate":"Mike Pence","spend":null,"total_spend":null,"colors":"#a0c938","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#a0c938"}],"type":"area"},{"name":"Nikki Haley","data":[{"date_produced":"2023-07-25","Candidate":"Nikki Haley","spend":null,"total_spend":null,"colors":"#ce5e13","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#ce5e13"},{"date_produced":"2023-07-26","Candidate":"Nikki Haley","spend":null,"total_spend":null,"colors":"#ce5e13","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#ce5e13"}],"type":"area"},{"name":"Perry Johnson","data":[{"date_produced":"2023-07-25","Candidate":"Perry Johnson","spend":null,"total_spend":null,"colors":"#0a7d98","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#0a7d98"},{"date_produced":"2023-07-26","Candidate":"Perry Johnson","spend":null,"total_spend":null,"colors":"#0a7d98","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#0a7d98"}],"type":"area"},{"name":"Ryan Binkley","data":[{"date_produced":"2023-07-25","Candidate":"Ryan Binkley","spend":null,"total_spend":null,"colors":"#002768","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#002768"},{"date_produced":"2023-07-26","Candidate":"Ryan Binkley","spend":null,"total_spend":null,"colors":"#002768","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#002768"}],"type":"area"},{"name":"Tim Scott","data":[{"date_produced":"2023-07-25","Candidate":"Tim Scott","spend":null,"total_spend":null,"colors":"#4bb597","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#4bb597"},{"date_produced":"2023-07-26","Candidate":"Tim Scott","spend":null,"total_spend":null,"colors":"#4bb597","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#4bb597"}],"type":"area"},{"name":"Vivek Ramaswamy","data":[{"date_produced":"2023-07-25","Candidate":"Vivek Ramaswamy","spend":null,"total_spend":null,"colors":"#b17f00","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#b17f00"},{"date_produced":"2023-07-26","Candidate":"Vivek Ramaswamy","spend":null,"total_spend":null,"colors":"#b17f00","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#b17f00"}],"type":"area"},{"name":"Will Hurd","data":[{"date_produced":"2023-07-25","Candidate":"Will Hurd","spend":null,"total_spend":null,"colors":"#c7c7c8","Daily Spend":null,"Date":"2023-07-25","x":1690243200000,"y":null,"fill":"#c7c7c8"},{"date_produced":"2023-07-26","Candidate":"Will Hurd","spend":null,"total_spend":null,"colors":"#c7c7c8","Daily Spend":null,"Date":"2023-07-26","x":1690329600000,"y":null,"fill":"#c7c7c8"}],"type":"area"}],"xAxis":{"type":"datetime","title":{"text":"Date"},"categories":null},"colors":["#54a625","#c70039","#881474","#243c79","#33a02c","#a0c938","#ce5e13","#0a7d98","#002768","#4bb597","#b17f00","#c7c7c8"],"tooltip":{"shared":true,"positioner":"function (labelWidth, labelHeight, point) {\n        return { x: 200, y: this.chart.plotTop };\n    }"}},"theme":{"chart":{"backgroundColor":"transparent"},"colors":["#7cb5ec","#434348","#90ed7d","#f7a35c","#8085e9","#f15c80","#e4d354","#2b908f","#f45b5b","#91e8e1"]},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":[],"debug":false},"evals":["hc_opts.chart.events.load","hc_opts.tooltip.positioner"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
 <section id="total-spend" class="level2">
 <h2 class="anchored" data-anchor-id="total-spend">Total Spend</h2>
-<div class="cell">
-
-</div>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Apr 26th - Jul 24th 2023 (Last 90 days)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Jun 25th - Jul 24th 2023 (Last 30 days)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Jul 18th - Jul 24th 2023 (Last 7 days)</a></li></ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Apr 28th - Jul 26th 2023 (Last 90 days)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Jun 27th - Jul 26th 2023 (Last 30 days)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Jul 20th - Jul 26th 2023 (Last 7 days)</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>In total, political candidates spent $4,721,749 and ran 9177 ads on Meta in this period.</p>
+<p>In total, political candidates spent $4,456,644 and ran 8741 ads on Meta in this period.</p>
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="xhufazvqlj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="xyimxzjybi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-html {
-  font-family: Chivo, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+#xyimxzjybi table {
+  font-family: Chivo, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-:where(#xhufazvqlj) .gt_table {
+#xyimxzjybi thead, #xyimxzjybi tbody, #xyimxzjybi tfoot, #xyimxzjybi tr, #xyimxzjybi td, #xyimxzjybi th {
+  border-style: none;
+}
+
+#xyimxzjybi p {
+  margin: 0;
+  padding: 0;
+}
+
+#xyimxzjybi .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -304,24 +308,12 @@ html {
   border-left-color: #D3D3D3;
 }
 
-:where(#xhufazvqlj) .gt_heading {
-  background-color: #FFFFFF;
-  text-align: left;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-:where(#xhufazvqlj) .gt_caption {
+#xyimxzjybi .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#xhufazvqlj) .gt_title {
+#xyimxzjybi .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -333,25 +325,37 @@ html {
   border-bottom-width: 0;
 }
 
-:where(#xhufazvqlj) .gt_subtitle {
+#xyimxzjybi .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-:where(#xhufazvqlj) .gt_bottom_border {
+#xyimxzjybi .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xyimxzjybi .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#xhufazvqlj) .gt_col_headings {
+#xyimxzjybi .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -366,7 +370,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#xhufazvqlj) .gt_col_heading {
+#xyimxzjybi .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -386,7 +390,7 @@ html {
   overflow-x: hidden;
 }
 
-:where(#xhufazvqlj) .gt_column_spanner_outer {
+#xyimxzjybi .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -398,15 +402,15 @@ html {
   padding-right: 4px;
 }
 
-:where(#xhufazvqlj) .gt_column_spanner_outer:first-child {
+#xyimxzjybi .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#xhufazvqlj) .gt_column_spanner_outer:last-child {
+#xyimxzjybi .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#xhufazvqlj) .gt_column_spanner {
+#xyimxzjybi .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -418,7 +422,11 @@ html {
   width: 100%;
 }
 
-:where(#xhufazvqlj) .gt_group_heading {
+#xyimxzjybi .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#xyimxzjybi .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -444,7 +452,7 @@ html {
   text-align: left;
 }
 
-:where(#xhufazvqlj) .gt_empty_group_heading {
+#xyimxzjybi .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -459,15 +467,15 @@ html {
   vertical-align: middle;
 }
 
-:where(#xhufazvqlj) .gt_from_md > :first-child {
+#xyimxzjybi .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#xhufazvqlj) .gt_from_md > :last-child {
+#xyimxzjybi .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#xhufazvqlj) .gt_row {
+#xyimxzjybi .gt_row {
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 5px;
@@ -486,7 +494,7 @@ html {
   overflow-x: hidden;
 }
 
-:where(#xhufazvqlj) .gt_stub {
+#xyimxzjybi .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -499,7 +507,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#xhufazvqlj) .gt_stub_row_group {
+#xyimxzjybi .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -513,11 +521,15 @@ html {
   vertical-align: top;
 }
 
-:where(#xhufazvqlj) .gt_row_group_first td {
+#xyimxzjybi .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#xhufazvqlj) .gt_summary_row {
+#xyimxzjybi .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#xyimxzjybi .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -527,16 +539,16 @@ html {
   padding-right: 5px;
 }
 
-:where(#xhufazvqlj) .gt_first_summary_row {
+#xyimxzjybi .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#xhufazvqlj) .gt_first_summary_row.thick {
+#xyimxzjybi .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#xhufazvqlj) .gt_last_summary_row {
+#xyimxzjybi .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -546,7 +558,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-:where(#xhufazvqlj) .gt_grand_summary_row {
+#xyimxzjybi .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -556,7 +568,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#xhufazvqlj) .gt_first_grand_summary_row {
+#xyimxzjybi .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -566,11 +578,21 @@ html {
   border-top-color: #D3D3D3;
 }
 
-:where(#xhufazvqlj) .gt_striped {
+#xyimxzjybi .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xyimxzjybi .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#xhufazvqlj) .gt_table_body {
+#xyimxzjybi .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -579,7 +601,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-:where(#xhufazvqlj) .gt_footnotes {
+#xyimxzjybi .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -593,16 +615,16 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#xhufazvqlj) .gt_footnote {
+#xyimxzjybi .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
-:where(#xhufazvqlj) .gt_sourcenotes {
+#xyimxzjybi .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -616,7 +638,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#xhufazvqlj) .gt_sourcenote {
+#xyimxzjybi .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -624,64 +646,63 @@ html {
   padding-right: 5px;
 }
 
-:where(#xhufazvqlj) .gt_left {
+#xyimxzjybi .gt_left {
   text-align: left;
 }
 
-:where(#xhufazvqlj) .gt_center {
+#xyimxzjybi .gt_center {
   text-align: center;
 }
 
-:where(#xhufazvqlj) .gt_right {
+#xyimxzjybi .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#xhufazvqlj) .gt_font_normal {
+#xyimxzjybi .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#xhufazvqlj) .gt_font_bold {
+#xyimxzjybi .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#xhufazvqlj) .gt_font_italic {
+#xyimxzjybi .gt_font_italic {
   font-style: italic;
 }
 
-:where(#xhufazvqlj) .gt_super {
+#xyimxzjybi .gt_super {
   font-size: 65%;
 }
 
-:where(#xhufazvqlj) .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
+#xyimxzjybi .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
-:where(#xhufazvqlj) .gt_asterisk {
+#xyimxzjybi .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#xhufazvqlj) .gt_indent_1 {
+#xyimxzjybi .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#xhufazvqlj) .gt_indent_2 {
+#xyimxzjybi .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#xhufazvqlj) .gt_indent_3 {
+#xyimxzjybi .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#xhufazvqlj) .gt_indent_4 {
+#xyimxzjybi .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#xhufazvqlj) .gt_indent_5 {
+#xyimxzjybi .gt_indent_5 {
   text-indent: 25px;
 }
 
@@ -689,10 +710,10 @@ tbody tr:last-child {
   border-bottom: 2px solid #ffffff00;
 }
 </style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id=""></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="Number of Advertisers">Number of Advertisers</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="Top Spenders">Top Spenders</th>
@@ -705,31 +726,31 @@ tbody tr:last-child {
 </div></th>
 <td headers="stub_1_1 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #243c79;"><div class="gt_from_md"><p>3</p>
 </div></td>
-<td headers="stub_1_1 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Joe Biden ($2,499,128)<br>2. Kamala Harris ($422,350)<br>3. Democratic Party ($183,348)</p>
+<td headers="stub_1_1 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Joe Biden ($2,228,954)<br>2. Kamala Harris ($385,013)<br>3. Democratic Party ($182,731)</p>
 </div></td>
-<td headers="stub_1_1 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>2,605</p>
+<td headers="stub_1_1 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>2,156</p>
 </div></td>
-<td headers="stub_1_1 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$3,104,826</p>
+<td headers="stub_1_1 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$2,796,698</p>
 </div></td></tr>
     <tr><th id="stub_1_2" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Perry Johnson</p>
 </div></th>
 <td headers="stub_1_2 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #0a7d98;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_2 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Perry Johnson ($504,233)</p>
+<td headers="stub_1_2 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Perry Johnson ($539,794)</p>
 </div></td>
-<td headers="stub_1_2 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>674</p>
+<td headers="stub_1_2 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>675</p>
 </div></td>
-<td headers="stub_1_2 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$504,233</p>
+<td headers="stub_1_2 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$539,794</p>
 </div></td></tr>
     <tr><th id="stub_1_3" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Donald Trump</p>
 </div></th>
 <td headers="stub_1_3 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #c70039;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_3 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Donald J. Trump ($293,210)</p>
+<td headers="stub_1_3 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Donald J. Trump ($298,928)</p>
 </div></td>
-<td headers="stub_1_3 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>504</p>
+<td headers="stub_1_3 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>420</p>
 </div></td>
-<td headers="stub_1_3 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$293,210</p>
+<td headers="stub_1_3 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$298,928</p>
 </div></td></tr>
     <tr><th id="stub_1_4" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Doug Burgum</p>
 </div></th>
@@ -745,81 +766,81 @@ tbody tr:last-child {
 </div></th>
 <td headers="stub_1_5 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #b17f00;"><div class="gt_from_md"><p>2</p>
 </div></td>
-<td headers="stub_1_5 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Vivek Ramaswamy ($154,210)<br>2. Team Vivek ($1,036)</p>
+<td headers="stub_1_5 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Vivek Ramaswamy ($155,952)<br>2. Team Vivek ($923)</p>
 </div></td>
-<td headers="stub_1_5 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>354</p>
+<td headers="stub_1_5 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>347</p>
 </div></td>
-<td headers="stub_1_5 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$155,246</p>
+<td headers="stub_1_5 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$156,875</p>
 </div></td></tr>
     <tr><th id="stub_1_6" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Tim Scott</p>
 </div></th>
 <td headers="stub_1_6 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #4bb597;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_6 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Tim Scott ($113,177)</p>
+<td headers="stub_1_6 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Tim Scott ($115,114)</p>
 </div></td>
-<td headers="stub_1_6 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>495</p>
+<td headers="stub_1_6 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>503</p>
 </div></td>
-<td headers="stub_1_6 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$113,177</p>
+<td headers="stub_1_6 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$115,114</p>
 </div></td></tr>
     <tr><th id="stub_1_7" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Ron DeSantis</p>
 </div></th>
 <td headers="stub_1_7 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #a8002a;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_7 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Ron DeSantis ($112,938)</p>
+<td headers="stub_1_7 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Ron DeSantis ($111,301)</p>
 </div></td>
 <td headers="stub_1_7 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>1,662</p>
 </div></td>
-<td headers="stub_1_7 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$112,938</p>
+<td headers="stub_1_7 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$111,301</p>
 </div></td></tr>
     <tr><th id="stub_1_8" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Ryan Binkley</p>
 </div></th>
 <td headers="stub_1_8 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #002768;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_8 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Ryan Binkley ($99,647)</p>
+<td headers="stub_1_8 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Ryan Binkley ($102,086)</p>
 </div></td>
-<td headers="stub_1_8 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>672</p>
+<td headers="stub_1_8 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>779</p>
 </div></td>
-<td headers="stub_1_8 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$99,647</p>
+<td headers="stub_1_8 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$102,086</p>
 </div></td></tr>
     <tr><th id="stub_1_9" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Francis Suarez</p>
 </div></th>
 <td headers="stub_1_9 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #881474;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_9 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Francis Suarez ($72,339)</p>
+<td headers="stub_1_9 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Francis Suarez ($72,782)</p>
 </div></td>
-<td headers="stub_1_9 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>759</p>
+<td headers="stub_1_9 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>761</p>
 </div></td>
-<td headers="stub_1_9 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$72,339</p>
+<td headers="stub_1_9 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$72,782</p>
 </div></td></tr>
     <tr><th id="stub_1_10" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Nikki Haley</p>
 </div></th>
 <td headers="stub_1_10 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #ce5e13;"><div class="gt_from_md"><p>2</p>
 </div></td>
-<td headers="stub_1_10 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Nikki Haley ($23,989)<br>2. Haley2024 The Movement ($100)</p>
+<td headers="stub_1_10 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Nikki Haley ($23,411)<br>2. Haley2024 The Movement ($100)</p>
 </div></td>
-<td headers="stub_1_10 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>557</p>
+<td headers="stub_1_10 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>539</p>
 </div></td>
-<td headers="stub_1_10 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$24,089</p>
+<td headers="stub_1_10 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$23,511</p>
 </div></td></tr>
     <tr><th id="stub_1_11" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Glenn Youngkin</p>
 </div></th>
-<td headers="stub_1_11 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #e3b505;"><div class="gt_from_md"><p>1</p>
+<td headers="stub_1_11 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: NA;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_11 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Glenn Youngkin ($21,944)</p>
+<td headers="stub_1_11 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Glenn Youngkin ($18,065)</p>
 </div></td>
 <td headers="stub_1_11 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>81</p>
 </div></td>
-<td headers="stub_1_11 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$21,944</p>
+<td headers="stub_1_11 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$18,065</p>
 </div></td></tr>
     <tr><th id="stub_1_12" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Mike Pence</p>
 </div></th>
 <td headers="stub_1_12 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #a0c938;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_12 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Mike Pence ($12,188)</p>
+<td headers="stub_1_12 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Mike Pence ($12,510)</p>
 </div></td>
-<td headers="stub_1_12 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>93</p>
+<td headers="stub_1_12 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>96</p>
 </div></td>
-<td headers="stub_1_12 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$12,188</p>
+<td headers="stub_1_12 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$12,510</p>
 </div></td></tr>
     <tr><th id="stub_1_13" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Asa Hutchinson</p>
 </div></th>
@@ -831,35 +852,35 @@ tbody tr:last-child {
 </div></td>
 <td headers="stub_1_13 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$10,884</p>
 </div></td></tr>
-    <tr><th id="stub_1_14" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Chris Christie</p>
+    <tr><th id="stub_1_14" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Will Hurd</p>
 </div></th>
-<td headers="stub_1_14 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #54a625;"><div class="gt_from_md"><p>1</p>
+<td headers="stub_1_14 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #c7c7c8;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_14 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Chris Christie ($3,542)</p>
+<td headers="stub_1_14 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Will Hurd ($4,082)</p>
 </div></td>
-<td headers="stub_1_14 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>24</p>
+<td headers="stub_1_14 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>27</p>
 </div></td>
-<td headers="stub_1_14 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$3,542</p>
+<td headers="stub_1_14 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$4,082</p>
 </div></td></tr>
-    <tr><th id="stub_1_15" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Will Hurd</p>
+    <tr><th id="stub_1_15" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Chris Christie</p>
 </div></th>
-<td headers="stub_1_15 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #c7c7c8;"><div class="gt_from_md"><p>1</p>
+<td headers="stub_1_15 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #54a625;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_15 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Will Hurd ($3,324)</p>
+<td headers="stub_1_15 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Chris Christie ($3,803)</p>
 </div></td>
-<td headers="stub_1_15 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>26</p>
+<td headers="stub_1_15 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>24</p>
 </div></td>
-<td headers="stub_1_15 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$3,324</p>
+<td headers="stub_1_15 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$3,803</p>
 </div></td></tr>
     <tr><th id="stub_1_16" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Marianne Williamson</p>
 </div></th>
 <td headers="stub_1_16 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #33a02c;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_16 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Marianne Williamson ($2,648)</p>
+<td headers="stub_1_16 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Marianne Williamson ($2,697)</p>
 </div></td>
 <td headers="stub_1_16 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>5</p>
 </div></td>
-<td headers="stub_1_16 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$2,648</p>
+<td headers="stub_1_16 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$2,697</p>
 </div></td></tr>
     <tr><th id="stub_1_17" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Rollan Roberts</p>
 </div></th>
@@ -880,19 +901,31 @@ tbody tr:last-child {
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>In total, political candidates spent $1,656,938 and ran 3892 ads on Meta in this period.</p>
+<p>In total, political candidates spent $1,686,331 and ran 3565 ads on Meta in this period.</p>
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="xeeyktrxfc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="twxbjhfnjq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-html {
-  font-family: Chivo, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+#twxbjhfnjq table {
+  font-family: Chivo, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-:where(#xeeyktrxfc) .gt_table {
+#twxbjhfnjq thead, #twxbjhfnjq tbody, #twxbjhfnjq tfoot, #twxbjhfnjq tr, #twxbjhfnjq td, #twxbjhfnjq th {
+  border-style: none;
+}
+
+#twxbjhfnjq p {
+  margin: 0;
+  padding: 0;
+}
+
+#twxbjhfnjq .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -915,24 +948,12 @@ html {
   border-left-color: #D3D3D3;
 }
 
-:where(#xeeyktrxfc) .gt_heading {
-  background-color: #FFFFFF;
-  text-align: left;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-:where(#xeeyktrxfc) .gt_caption {
+#twxbjhfnjq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#xeeyktrxfc) .gt_title {
+#twxbjhfnjq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -944,25 +965,37 @@ html {
   border-bottom-width: 0;
 }
 
-:where(#xeeyktrxfc) .gt_subtitle {
+#twxbjhfnjq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-:where(#xeeyktrxfc) .gt_bottom_border {
+#twxbjhfnjq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#twxbjhfnjq .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#xeeyktrxfc) .gt_col_headings {
+#twxbjhfnjq .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -977,7 +1010,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#xeeyktrxfc) .gt_col_heading {
+#twxbjhfnjq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -997,7 +1030,7 @@ html {
   overflow-x: hidden;
 }
 
-:where(#xeeyktrxfc) .gt_column_spanner_outer {
+#twxbjhfnjq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -1009,15 +1042,15 @@ html {
   padding-right: 4px;
 }
 
-:where(#xeeyktrxfc) .gt_column_spanner_outer:first-child {
+#twxbjhfnjq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#xeeyktrxfc) .gt_column_spanner_outer:last-child {
+#twxbjhfnjq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#xeeyktrxfc) .gt_column_spanner {
+#twxbjhfnjq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -1029,7 +1062,11 @@ html {
   width: 100%;
 }
 
-:where(#xeeyktrxfc) .gt_group_heading {
+#twxbjhfnjq .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#twxbjhfnjq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1055,7 +1092,7 @@ html {
   text-align: left;
 }
 
-:where(#xeeyktrxfc) .gt_empty_group_heading {
+#twxbjhfnjq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1070,15 +1107,15 @@ html {
   vertical-align: middle;
 }
 
-:where(#xeeyktrxfc) .gt_from_md > :first-child {
+#twxbjhfnjq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#xeeyktrxfc) .gt_from_md > :last-child {
+#twxbjhfnjq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#xeeyktrxfc) .gt_row {
+#twxbjhfnjq .gt_row {
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 5px;
@@ -1097,7 +1134,7 @@ html {
   overflow-x: hidden;
 }
 
-:where(#xeeyktrxfc) .gt_stub {
+#twxbjhfnjq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -1110,7 +1147,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#xeeyktrxfc) .gt_stub_row_group {
+#twxbjhfnjq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1124,11 +1161,15 @@ html {
   vertical-align: top;
 }
 
-:where(#xeeyktrxfc) .gt_row_group_first td {
+#twxbjhfnjq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#xeeyktrxfc) .gt_summary_row {
+#twxbjhfnjq .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#twxbjhfnjq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1138,16 +1179,16 @@ html {
   padding-right: 5px;
 }
 
-:where(#xeeyktrxfc) .gt_first_summary_row {
+#twxbjhfnjq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#xeeyktrxfc) .gt_first_summary_row.thick {
+#twxbjhfnjq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#xeeyktrxfc) .gt_last_summary_row {
+#twxbjhfnjq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1157,7 +1198,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-:where(#xeeyktrxfc) .gt_grand_summary_row {
+#twxbjhfnjq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1167,7 +1208,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#xeeyktrxfc) .gt_first_grand_summary_row {
+#twxbjhfnjq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1177,11 +1218,21 @@ html {
   border-top-color: #D3D3D3;
 }
 
-:where(#xeeyktrxfc) .gt_striped {
+#twxbjhfnjq .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#twxbjhfnjq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#xeeyktrxfc) .gt_table_body {
+#twxbjhfnjq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1190,7 +1241,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-:where(#xeeyktrxfc) .gt_footnotes {
+#twxbjhfnjq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1204,16 +1255,16 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#xeeyktrxfc) .gt_footnote {
+#twxbjhfnjq .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
-:where(#xeeyktrxfc) .gt_sourcenotes {
+#twxbjhfnjq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1227,7 +1278,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#xeeyktrxfc) .gt_sourcenote {
+#twxbjhfnjq .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1235,64 +1286,63 @@ html {
   padding-right: 5px;
 }
 
-:where(#xeeyktrxfc) .gt_left {
+#twxbjhfnjq .gt_left {
   text-align: left;
 }
 
-:where(#xeeyktrxfc) .gt_center {
+#twxbjhfnjq .gt_center {
   text-align: center;
 }
 
-:where(#xeeyktrxfc) .gt_right {
+#twxbjhfnjq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#xeeyktrxfc) .gt_font_normal {
+#twxbjhfnjq .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#xeeyktrxfc) .gt_font_bold {
+#twxbjhfnjq .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#xeeyktrxfc) .gt_font_italic {
+#twxbjhfnjq .gt_font_italic {
   font-style: italic;
 }
 
-:where(#xeeyktrxfc) .gt_super {
+#twxbjhfnjq .gt_super {
   font-size: 65%;
 }
 
-:where(#xeeyktrxfc) .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
+#twxbjhfnjq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
-:where(#xeeyktrxfc) .gt_asterisk {
+#twxbjhfnjq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#xeeyktrxfc) .gt_indent_1 {
+#twxbjhfnjq .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#xeeyktrxfc) .gt_indent_2 {
+#twxbjhfnjq .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#xeeyktrxfc) .gt_indent_3 {
+#twxbjhfnjq .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#xeeyktrxfc) .gt_indent_4 {
+#twxbjhfnjq .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#xeeyktrxfc) .gt_indent_5 {
+#twxbjhfnjq .gt_indent_5 {
   text-indent: 25px;
 }
 
@@ -1300,10 +1350,10 @@ tbody tr:last-child {
   border-bottom: 2px solid #ffffff00;
 }
 </style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id=""></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="Number of Advertisers">Number of Advertisers</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="Top Spenders">Top Spenders</th>
@@ -1316,161 +1366,151 @@ tbody tr:last-child {
 </div></th>
 <td headers="stub_1_1 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #243c79;"><div class="gt_from_md"><p>3</p>
 </div></td>
-<td headers="stub_1_1 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Joe Biden ($823,882)<br>2. Kamala Harris ($69,933)<br>3. Democratic Party ($37,878)</p>
+<td headers="stub_1_1 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Joe Biden ($878,302)<br>2. Kamala Harris ($67,385)<br>3. Democratic Party ($11,643)</p>
 </div></td>
-<td headers="stub_1_1 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>616</p>
+<td headers="stub_1_1 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>670</p>
 </div></td>
-<td headers="stub_1_1 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$931,693</p>
+<td headers="stub_1_1 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$957,330</p>
 </div></td></tr>
     <tr><th id="stub_1_2" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Perry Johnson</p>
 </div></th>
 <td headers="stub_1_2 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #0a7d98;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_2 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Perry Johnson ($231,762)</p>
+<td headers="stub_1_2 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Perry Johnson ($242,787)</p>
 </div></td>
-<td headers="stub_1_2 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>305</p>
+<td headers="stub_1_2 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>259</p>
 </div></td>
-<td headers="stub_1_2 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$231,762</p>
+<td headers="stub_1_2 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$242,787</p>
 </div></td></tr>
     <tr><th id="stub_1_3" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Doug Burgum</p>
 </div></th>
 <td headers="stub_1_3 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #efb2a6;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_3 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Doug Burgum ($152,739)</p>
+<td headers="stub_1_3 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Doug Burgum ($141,694)</p>
 </div></td>
-<td headers="stub_1_3 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>535</p>
+<td headers="stub_1_3 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>390</p>
 </div></td>
-<td headers="stub_1_3 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$152,739</p>
+<td headers="stub_1_3 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$141,694</p>
 </div></td></tr>
     <tr><th id="stub_1_4" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Donald Trump</p>
 </div></th>
 <td headers="stub_1_4 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #c70039;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_4 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Donald J. Trump ($91,763)</p>
+<td headers="stub_1_4 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Donald J. Trump ($100,329)</p>
 </div></td>
-<td headers="stub_1_4 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>184</p>
+<td headers="stub_1_4 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>200</p>
 </div></td>
-<td headers="stub_1_4 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$91,763</p>
+<td headers="stub_1_4 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$100,329</p>
 </div></td></tr>
     <tr><th id="stub_1_5" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Francis Suarez</p>
 </div></th>
 <td headers="stub_1_5 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #881474;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_5 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Francis Suarez ($72,019)</p>
+<td headers="stub_1_5 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Francis Suarez ($72,185)</p>
 </div></td>
-<td headers="stub_1_5 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>721</p>
+<td headers="stub_1_5 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>581</p>
 </div></td>
-<td headers="stub_1_5 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$72,019</p>
+<td headers="stub_1_5 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$72,185</p>
 </div></td></tr>
     <tr><th id="stub_1_6" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Vivek Ramaswamy</p>
 </div></th>
 <td headers="stub_1_6 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #b17f00;"><div class="gt_from_md"><p>2</p>
 </div></td>
-<td headers="stub_1_6 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Vivek Ramaswamy ($50,090)<br>2. Team Vivek ($892)</p>
+<td headers="stub_1_6 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Vivek Ramaswamy ($48,235)<br>2. Team Vivek ($879)</p>
 </div></td>
-<td headers="stub_1_6 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>147</p>
+<td headers="stub_1_6 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>152</p>
 </div></td>
-<td headers="stub_1_6 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$50,982</p>
+<td headers="stub_1_6 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$49,114</p>
 </div></td></tr>
-    <tr><th id="stub_1_7" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Tim Scott</p>
+    <tr><th id="stub_1_7" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Ryan Binkley</p>
 </div></th>
-<td headers="stub_1_7 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #4bb597;"><div class="gt_from_md"><p>1</p>
+<td headers="stub_1_7 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #002768;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_7 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Tim Scott ($43,391)</p>
+<td headers="stub_1_7 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Ryan Binkley ($42,429)</p>
 </div></td>
-<td headers="stub_1_7 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>203</p>
+<td headers="stub_1_7 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>666</p>
 </div></td>
-<td headers="stub_1_7 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$43,391</p>
+<td headers="stub_1_7 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$42,429</p>
 </div></td></tr>
-    <tr><th id="stub_1_8" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Ryan Binkley</p>
+    <tr><th id="stub_1_8" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Tim Scott</p>
 </div></th>
-<td headers="stub_1_8 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #002768;"><div class="gt_from_md"><p>1</p>
+<td headers="stub_1_8 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #4bb597;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_8 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Ryan Binkley ($40,235)</p>
+<td headers="stub_1_8 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Tim Scott ($42,388)</p>
 </div></td>
-<td headers="stub_1_8 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>559</p>
+<td headers="stub_1_8 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>210</p>
 </div></td>
-<td headers="stub_1_8 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$40,235</p>
+<td headers="stub_1_8 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$42,388</p>
 </div></td></tr>
     <tr><th id="stub_1_9" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Ron DeSantis</p>
 </div></th>
 <td headers="stub_1_9 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #a8002a;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_9 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Ron DeSantis ($15,709)</p>
+<td headers="stub_1_9 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Ron DeSantis ($12,780)</p>
 </div></td>
-<td headers="stub_1_9 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>305</p>
+<td headers="stub_1_9 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>156</p>
 </div></td>
-<td headers="stub_1_9 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$15,709</p>
+<td headers="stub_1_9 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$12,780</p>
 </div></td></tr>
     <tr><th id="stub_1_10" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Mike Pence</p>
 </div></th>
 <td headers="stub_1_10 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #a0c938;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_10 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Mike Pence ($10,527)</p>
+<td headers="stub_1_10 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Mike Pence ($10,330)</p>
 </div></td>
-<td headers="stub_1_10 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>82</p>
+<td headers="stub_1_10 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>84</p>
 </div></td>
-<td headers="stub_1_10 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$10,527</p>
+<td headers="stub_1_10 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$10,330</p>
 </div></td></tr>
     <tr><th id="stub_1_11" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Nikki Haley</p>
 </div></th>
 <td headers="stub_1_11 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #ce5e13;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_11 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Nikki Haley ($6,255)</p>
+<td headers="stub_1_11 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Nikki Haley ($4,984)</p>
 </div></td>
-<td headers="stub_1_11 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>172</p>
+<td headers="stub_1_11 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>138</p>
 </div></td>
-<td headers="stub_1_11 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$6,255</p>
+<td headers="stub_1_11 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$4,984</p>
 </div></td></tr>
     <tr><th id="stub_1_12" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Will Hurd</p>
 </div></th>
 <td headers="stub_1_12 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #c7c7c8;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_12 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Will Hurd ($3,324)</p>
+<td headers="stub_1_12 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Will Hurd ($4,082)</p>
 </div></td>
-<td headers="stub_1_12 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>26</p>
+<td headers="stub_1_12 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>27</p>
 </div></td>
-<td headers="stub_1_12 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$3,324</p>
+<td headers="stub_1_12 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$4,082</p>
 </div></td></tr>
     <tr><th id="stub_1_13" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Marianne Williamson</p>
 </div></th>
 <td headers="stub_1_13 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #33a02c;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_13 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Marianne Williamson ($2,648)</p>
+<td headers="stub_1_13 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Marianne Williamson ($2,697)</p>
 </div></td>
 <td headers="stub_1_13 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>5</p>
 </div></td>
-<td headers="stub_1_13 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$2,648</p>
+<td headers="stub_1_13 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$2,697</p>
 </div></td></tr>
     <tr><th id="stub_1_14" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Chris Christie</p>
 </div></th>
 <td headers="stub_1_14 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #54a625;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_14 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Chris Christie ($2,254)</p>
+<td headers="stub_1_14 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Chris Christie ($2,516)</p>
 </div></td>
 <td headers="stub_1_14 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>11</p>
 </div></td>
-<td headers="stub_1_14 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$2,254</p>
+<td headers="stub_1_14 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$2,516</p>
 </div></td></tr>
     <tr><th id="stub_1_15" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Asa Hutchinson</p>
 </div></th>
 <td headers="stub_1_15 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #a526a5;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_15 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Asa Hutchinson ($1,296)</p>
+<td headers="stub_1_15 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Asa Hutchinson ($686)</p>
 </div></td>
 <td headers="stub_1_15 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>16</p>
 </div></td>
-<td headers="stub_1_15 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$1,296</p>
-</div></td></tr>
-    <tr><th id="stub_1_16" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Glenn Youngkin</p>
-</div></th>
-<td headers="stub_1_16 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #e3b505;"><div class="gt_from_md"><p>1</p>
-</div></td>
-<td headers="stub_1_16 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Glenn Youngkin ($341)</p>
-</div></td>
-<td headers="stub_1_16 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>5</p>
-</div></td>
-<td headers="stub_1_16 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$341</p>
+<td headers="stub_1_15 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$686</p>
 </div></td></tr>
   </tbody>
   
@@ -1481,19 +1521,31 @@ tbody tr:last-child {
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>In total, political candidates spent $448,850 and ran 1383 ads on Meta in this period</p>
+<p>In total, political candidates spent $507,792 and ran 1371 ads on Meta in this period</p>
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="dnbretfvuq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="mtxrhxgsjr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-html {
-  font-family: Chivo, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+#mtxrhxgsjr table {
+  font-family: Chivo, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-:where(#dnbretfvuq) .gt_table {
+#mtxrhxgsjr thead, #mtxrhxgsjr tbody, #mtxrhxgsjr tfoot, #mtxrhxgsjr tr, #mtxrhxgsjr td, #mtxrhxgsjr th {
+  border-style: none;
+}
+
+#mtxrhxgsjr p {
+  margin: 0;
+  padding: 0;
+}
+
+#mtxrhxgsjr .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -1516,24 +1568,12 @@ html {
   border-left-color: #D3D3D3;
 }
 
-:where(#dnbretfvuq) .gt_heading {
-  background-color: #FFFFFF;
-  text-align: left;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-:where(#dnbretfvuq) .gt_caption {
+#mtxrhxgsjr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#dnbretfvuq) .gt_title {
+#mtxrhxgsjr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1545,25 +1585,37 @@ html {
   border-bottom-width: 0;
 }
 
-:where(#dnbretfvuq) .gt_subtitle {
+#mtxrhxgsjr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-:where(#dnbretfvuq) .gt_bottom_border {
+#mtxrhxgsjr .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#mtxrhxgsjr .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#dnbretfvuq) .gt_col_headings {
+#mtxrhxgsjr .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1578,7 +1630,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#dnbretfvuq) .gt_col_heading {
+#mtxrhxgsjr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -1598,7 +1650,7 @@ html {
   overflow-x: hidden;
 }
 
-:where(#dnbretfvuq) .gt_column_spanner_outer {
+#mtxrhxgsjr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -1610,15 +1662,15 @@ html {
   padding-right: 4px;
 }
 
-:where(#dnbretfvuq) .gt_column_spanner_outer:first-child {
+#mtxrhxgsjr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#dnbretfvuq) .gt_column_spanner_outer:last-child {
+#mtxrhxgsjr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#dnbretfvuq) .gt_column_spanner {
+#mtxrhxgsjr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -1630,7 +1682,11 @@ html {
   width: 100%;
 }
 
-:where(#dnbretfvuq) .gt_group_heading {
+#mtxrhxgsjr .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#mtxrhxgsjr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1656,7 +1712,7 @@ html {
   text-align: left;
 }
 
-:where(#dnbretfvuq) .gt_empty_group_heading {
+#mtxrhxgsjr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1671,15 +1727,15 @@ html {
   vertical-align: middle;
 }
 
-:where(#dnbretfvuq) .gt_from_md > :first-child {
+#mtxrhxgsjr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#dnbretfvuq) .gt_from_md > :last-child {
+#mtxrhxgsjr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#dnbretfvuq) .gt_row {
+#mtxrhxgsjr .gt_row {
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 5px;
@@ -1698,7 +1754,7 @@ html {
   overflow-x: hidden;
 }
 
-:where(#dnbretfvuq) .gt_stub {
+#mtxrhxgsjr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -1711,7 +1767,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#dnbretfvuq) .gt_stub_row_group {
+#mtxrhxgsjr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1725,11 +1781,15 @@ html {
   vertical-align: top;
 }
 
-:where(#dnbretfvuq) .gt_row_group_first td {
+#mtxrhxgsjr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#dnbretfvuq) .gt_summary_row {
+#mtxrhxgsjr .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#mtxrhxgsjr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1739,16 +1799,16 @@ html {
   padding-right: 5px;
 }
 
-:where(#dnbretfvuq) .gt_first_summary_row {
+#mtxrhxgsjr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#dnbretfvuq) .gt_first_summary_row.thick {
+#mtxrhxgsjr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#dnbretfvuq) .gt_last_summary_row {
+#mtxrhxgsjr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1758,7 +1818,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-:where(#dnbretfvuq) .gt_grand_summary_row {
+#mtxrhxgsjr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1768,7 +1828,7 @@ html {
   padding-right: 5px;
 }
 
-:where(#dnbretfvuq) .gt_first_grand_summary_row {
+#mtxrhxgsjr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1778,11 +1838,21 @@ html {
   border-top-color: #D3D3D3;
 }
 
-:where(#dnbretfvuq) .gt_striped {
+#mtxrhxgsjr .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mtxrhxgsjr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#dnbretfvuq) .gt_table_body {
+#mtxrhxgsjr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1791,7 +1861,7 @@ html {
   border-bottom-color: #D3D3D3;
 }
 
-:where(#dnbretfvuq) .gt_footnotes {
+#mtxrhxgsjr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1805,16 +1875,16 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#dnbretfvuq) .gt_footnote {
+#mtxrhxgsjr .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
-:where(#dnbretfvuq) .gt_sourcenotes {
+#mtxrhxgsjr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1828,7 +1898,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-:where(#dnbretfvuq) .gt_sourcenote {
+#mtxrhxgsjr .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1836,64 +1906,63 @@ html {
   padding-right: 5px;
 }
 
-:where(#dnbretfvuq) .gt_left {
+#mtxrhxgsjr .gt_left {
   text-align: left;
 }
 
-:where(#dnbretfvuq) .gt_center {
+#mtxrhxgsjr .gt_center {
   text-align: center;
 }
 
-:where(#dnbretfvuq) .gt_right {
+#mtxrhxgsjr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#dnbretfvuq) .gt_font_normal {
+#mtxrhxgsjr .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#dnbretfvuq) .gt_font_bold {
+#mtxrhxgsjr .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#dnbretfvuq) .gt_font_italic {
+#mtxrhxgsjr .gt_font_italic {
   font-style: italic;
 }
 
-:where(#dnbretfvuq) .gt_super {
+#mtxrhxgsjr .gt_super {
   font-size: 65%;
 }
 
-:where(#dnbretfvuq) .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
+#mtxrhxgsjr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
-:where(#dnbretfvuq) .gt_asterisk {
+#mtxrhxgsjr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#dnbretfvuq) .gt_indent_1 {
+#mtxrhxgsjr .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#dnbretfvuq) .gt_indent_2 {
+#mtxrhxgsjr .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#dnbretfvuq) .gt_indent_3 {
+#mtxrhxgsjr .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#dnbretfvuq) .gt_indent_4 {
+#mtxrhxgsjr .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#dnbretfvuq) .gt_indent_5 {
+#mtxrhxgsjr .gt_indent_5 {
   text-indent: 25px;
 }
 
@@ -1901,10 +1970,10 @@ tbody tr:last-child {
   border-bottom: 2px solid #ffffff00;
 }
 </style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    
+    <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id=""></th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="Number of Advertisers">Number of Advertisers</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="Top Spenders">Top Spenders</th>
@@ -1917,131 +1986,131 @@ tbody tr:last-child {
 </div></th>
 <td headers="stub_1_1 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #243c79;"><div class="gt_from_md"><p>2</p>
 </div></td>
-<td headers="stub_1_1 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Joe Biden ($230,964)<br>2. Kamala Harris ($19,102)</p>
+<td headers="stub_1_1 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Joe Biden ($272,909)<br>2. Kamala Harris ($18,972)</p>
 </div></td>
-<td headers="stub_1_1 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>266</p>
+<td headers="stub_1_1 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>306</p>
 </div></td>
-<td headers="stub_1_1 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$250,066</p>
+<td headers="stub_1_1 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$291,881</p>
 </div></td></tr>
     <tr><th id="stub_1_2" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Perry Johnson</p>
 </div></th>
 <td headers="stub_1_2 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #0a7d98;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_2 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Perry Johnson ($104,003)</p>
+<td headers="stub_1_2 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Perry Johnson ($125,069)</p>
 </div></td>
-<td headers="stub_1_2 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>190</p>
+<td headers="stub_1_2 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>192</p>
 </div></td>
-<td headers="stub_1_2 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$104,003</p>
+<td headers="stub_1_2 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$125,069</p>
 </div></td></tr>
-    <tr><th id="stub_1_3" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Ryan Binkley</p>
+    <tr><th id="stub_1_3" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Donald Trump</p>
 </div></th>
-<td headers="stub_1_3 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #002768;"><div class="gt_from_md"><p>1</p>
+<td headers="stub_1_3 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #c70039;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_3 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Ryan Binkley ($24,489)</p>
+<td headers="stub_1_3 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Donald J. Trump ($33,803)</p>
 </div></td>
-<td headers="stub_1_3 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>435</p>
+<td headers="stub_1_3 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>123</p>
 </div></td>
-<td headers="stub_1_3 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$24,489</p>
+<td headers="stub_1_3 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$33,803</p>
 </div></td></tr>
-    <tr><th id="stub_1_4" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Donald Trump</p>
+    <tr><th id="stub_1_4" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Ryan Binkley</p>
 </div></th>
-<td headers="stub_1_4 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #c70039;"><div class="gt_from_md"><p>1</p>
+<td headers="stub_1_4 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #002768;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_4 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Donald J. Trump ($23,777)</p>
+<td headers="stub_1_4 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Ryan Binkley ($18,330)</p>
 </div></td>
-<td headers="stub_1_4 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>102</p>
+<td headers="stub_1_4 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>405</p>
 </div></td>
-<td headers="stub_1_4 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$23,777</p>
+<td headers="stub_1_4 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$18,330</p>
 </div></td></tr>
-    <tr><th id="stub_1_5" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Doug Burgum</p>
+    <tr><th id="stub_1_5" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Vivek Ramaswamy</p>
 </div></th>
-<td headers="stub_1_5 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #efb2a6;"><div class="gt_from_md"><p>1</p>
+<td headers="stub_1_5 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #b17f00;"><div class="gt_from_md"><p>2</p>
 </div></td>
-<td headers="stub_1_5 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Doug Burgum ($17,006)</p>
+<td headers="stub_1_5 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Vivek Ramaswamy ($13,004)<br>2. Team Vivek ($100)</p>
 </div></td>
-<td headers="stub_1_5 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>13</p>
+<td headers="stub_1_5 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>60</p>
 </div></td>
-<td headers="stub_1_5 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$17,006</p>
+<td headers="stub_1_5 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$13,104</p>
 </div></td></tr>
-    <tr><th id="stub_1_6" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Vivek Ramaswamy</p>
+    <tr><th id="stub_1_6" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Doug Burgum</p>
 </div></th>
-<td headers="stub_1_6 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #b17f00;"><div class="gt_from_md"><p>2</p>
+<td headers="stub_1_6 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #efb2a6;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_6 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Vivek Ramaswamy ($13,408)<br>2. Team Vivek ($100)</p>
+<td headers="stub_1_6 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Doug Burgum ($9,900)</p>
 </div></td>
-<td headers="stub_1_6 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>61</p>
+<td headers="stub_1_6 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>12</p>
 </div></td>
-<td headers="stub_1_6 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$13,508</p>
+<td headers="stub_1_6 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$9,900</p>
 </div></td></tr>
     <tr><th id="stub_1_7" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Tim Scott</p>
 </div></th>
 <td headers="stub_1_7 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #4bb597;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_7 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Tim Scott ($7,478)</p>
+<td headers="stub_1_7 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Tim Scott ($7,243)</p>
 </div></td>
-<td headers="stub_1_7 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>109</p>
+<td headers="stub_1_7 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>110</p>
 </div></td>
-<td headers="stub_1_7 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$7,478</p>
+<td headers="stub_1_7 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$7,243</p>
 </div></td></tr>
     <tr><th id="stub_1_8" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Will Hurd</p>
 </div></th>
 <td headers="stub_1_8 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #c7c7c8;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_8 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Will Hurd ($2,322)</p>
+<td headers="stub_1_8 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Will Hurd ($2,520)</p>
 </div></td>
-<td headers="stub_1_8 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>26</p>
+<td headers="stub_1_8 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>27</p>
 </div></td>
-<td headers="stub_1_8 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$2,322</p>
+<td headers="stub_1_8 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$2,520</p>
 </div></td></tr>
-    <tr><th id="stub_1_9" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Mike Pence</p>
+    <tr><th id="stub_1_9" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Francis Suarez</p>
 </div></th>
-<td headers="stub_1_9 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #a0c938;"><div class="gt_from_md"><p>1</p>
+<td headers="stub_1_9 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #881474;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_9 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Mike Pence ($1,951)</p>
+<td headers="stub_1_9 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Francis Suarez ($1,580)</p>
 </div></td>
-<td headers="stub_1_9 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>14</p>
+<td headers="stub_1_9 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>94</p>
 </div></td>
-<td headers="stub_1_9 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$1,951</p>
+<td headers="stub_1_9 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$1,580</p>
 </div></td></tr>
-    <tr><th id="stub_1_10" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Francis Suarez</p>
+    <tr><th id="stub_1_10" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Mike Pence</p>
 </div></th>
-<td headers="stub_1_10 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #881474;"><div class="gt_from_md"><p>1</p>
+<td headers="stub_1_10 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #a0c938;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_10 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Francis Suarez ($1,437)</p>
+<td headers="stub_1_10 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Mike Pence ($1,459)</p>
 </div></td>
-<td headers="stub_1_10 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>138</p>
+<td headers="stub_1_10 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>13</p>
 </div></td>
-<td headers="stub_1_10 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$1,437</p>
+<td headers="stub_1_10 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$1,459</p>
 </div></td></tr>
     <tr><th id="stub_1_11" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Marianne Williamson</p>
 </div></th>
 <td headers="stub_1_11 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #33a02c;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_11 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Marianne Williamson ($1,101)</p>
+<td headers="stub_1_11 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Marianne Williamson ($1,051)</p>
 </div></td>
 <td headers="stub_1_11 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>3</p>
 </div></td>
-<td headers="stub_1_11 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$1,101</p>
+<td headers="stub_1_11 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$1,051</p>
 </div></td></tr>
-    <tr><th id="stub_1_12" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Chris Christie</p>
+    <tr><th id="stub_1_12" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Nikki Haley</p>
 </div></th>
-<td headers="stub_1_12 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #54a625;"><div class="gt_from_md"><p>1</p>
+<td headers="stub_1_12 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #ce5e13;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_12 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Chris Christie ($916)</p>
+<td headers="stub_1_12 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Nikki Haley ($938)</p>
 </div></td>
-<td headers="stub_1_12 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>10</p>
+<td headers="stub_1_12 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>16</p>
 </div></td>
-<td headers="stub_1_12 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$916</p>
+<td headers="stub_1_12 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$938</p>
 </div></td></tr>
-    <tr><th id="stub_1_13" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Nikki Haley</p>
+    <tr><th id="stub_1_13" scope="row" class="gt_row gt_center gt_stub"><div class="gt_from_md"><p>Chris Christie</p>
 </div></th>
-<td headers="stub_1_13 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #ce5e13;"><div class="gt_from_md"><p>1</p>
+<td headers="stub_1_13 Number of Advertisers" class="gt_row gt_center" style="border-left-width: 18.5px; border-left-style: solid; border-left-color: #54a625;"><div class="gt_from_md"><p>1</p>
 </div></td>
-<td headers="stub_1_13 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Nikki Haley ($796)</p>
+<td headers="stub_1_13 Top Spenders" class="gt_row gt_center"><div class="gt_from_md"><p><br>1. Chris Christie ($914)</p>
 </div></td>
-<td headers="stub_1_13 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>16</p>
+<td headers="stub_1_13 Number of Ads" class="gt_row gt_center"><div class="gt_from_md"><p>10</p>
 </div></td>
-<td headers="stub_1_13 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$796</p>
+<td headers="stub_1_13 Total Spend" class="gt_row gt_center"><div class="gt_from_md"><p>$914</p>
 </div></td></tr>
   </tbody>
   
@@ -2085,9 +2154,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -2099,7 +2182,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -2135,24 +2235,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
