@@ -318,22 +318,17 @@ This section shows *daily* and *total spending* of political candidates in the r
 #   hchart('area', hcaes(x = 'date_produced', y = 'spend', group = "Candidate"))
 
 ## start here
-
-more_data <- dir("../data/reports", full.names = T) %>%
-  
-    map_dfr(~{#print(.x)
-        yo <- read.csv(.x) %>% mutate(path = .x)
-        return(yo)
-            }) %>%
-    mutate(date_produced = str_remove_all(path, "../data/reports/FacebookAdLibraryReport_|_US_yesterday_advertiser\\.csv")) %>%
-    mutate(date_produced = lubridate::ymd(date_produced)) %>%
+more_data <- readr::read_rds("https://github.com/favstats/meta_reports/raw/main/data/daily.rds")  %>%
+    mutate(date_produced = lubridate::ymd(date)) %>%
   drop_na(date_produced) %>% 
     janitor::clean_names()%>% #rename(advertiser_id = page_id) %>%
-    mutate(spend = readr::parse_number(amount_spent_usd)) %>%
+    mutate(spend = readr::parse_number(amount_spent_eur)) %>%
     mutate(spend = ifelse(spend == 100, 50, spend)) %>%
     # distinct(page_id, .keep_all = T) %>%
     filter(str_detect(page_name, "Global Space Conference on Climate Change|de Alliantie|PvdA - GroenLinks", negate = T)) %>%
-    mutate(page_id = as.character(page_id))
+    mutate(page_id = as.character(page_id)) %>% 
+  filter(cntry == "US") %>% 
+  filter(date_produced >= lubridate::as_date("2023-06-01"))
 
 
 # color_dat <- color_dat %>% mutate(Candidate  =coalition)
