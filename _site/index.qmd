@@ -322,7 +322,7 @@ more_data <- readr::read_rds("https://github.com/favstats/meta_reports/raw/main/
     mutate(date_produced = lubridate::ymd(date)) %>%
   drop_na(date_produced) %>% 
     janitor::clean_names()%>% #rename(advertiser_id = page_id) %>%
-    mutate(spend = readr::parse_number(amount_spent_eur)) %>%
+    mutate(spend = readr::parse_number(amount_spent_usd)) %>%
     mutate(spend = ifelse(spend == 100, 50, spend)) %>%
     # distinct(page_id, .keep_all = T) %>%
     filter(str_detect(page_name, "Global Space Conference on Climate Change|de Alliantie|PvdA - GroenLinks", negate = T)) %>%
