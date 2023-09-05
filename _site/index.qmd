@@ -318,7 +318,7 @@ This section shows *daily* and *total spending* of political candidates in the r
 #   hchart('area', hcaes(x = 'date_produced', y = 'spend', group = "Candidate"))
 
 ## start here
-more_data <- readr::read_rds("https://github.com/favstats/meta_reports/raw/main/daily/US.rds")  %>%
+more_data <- readr::read_rds("https://github.com/favstats/meta_reports2/raw/main/daily/US.rds")  %>%
     mutate(date_produced = lubridate::ymd(date)) %>%
   drop_na(date_produced) %>% 
     janitor::clean_names()%>% #rename(advertiser_id = page_id) %>%
