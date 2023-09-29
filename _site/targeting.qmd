@@ -436,7 +436,7 @@ interest_targeting30 <-  election_dat30 %>%
     mutate(total_spend = ifelse(total_spend == 50, 50, total_spend)) %>%
     mutate(total_spend = total_spend * total_spend_pct) %>%
     filter(main_currency == the_currency)  %>%
-    # left_join(page_names %>% select(internal_id = page_id, page_name) %>% distinct(internal_id, .keep_all =T)) %>%
+    # left_join(page_names %>% select(internal_id = page_id, page_name) %>% distinct(internal_id, .keep_all =F)) %>%
     # left_join(us_advertisers %>% rename(internal_id = page_id)) %>%
     # drop_na(left_vs_right) %>%
     mutate(value = paste0(detailed_type,": ", value)) %>% 
@@ -741,7 +741,7 @@ get_contested_graph(election_dat7, 500)
 
 ## Geographical Targeting 
 
-The graphs below show various kinds of *location targeting* that candidates engaged in on Meta platforms. The bigger the area the more money was spend by the Candidate on targeting this location.
+The graphs below show various kinds of *location targeting* that parties engaged in on Meta platforms. The bigger the area the more money was spend by the candidate on targeting this location.
 
 
 ::: {.panel-tabset}
@@ -754,7 +754,7 @@ The graphs below show various kinds of *location targeting* that candidates enga
 
 #### Regions
 
-```{r,fig.width=10, fig.height=8}
+```{r,fig.width=10, fig.height=8, echo = F}
 library(treemap)
 region_dat <- election_dat30 %>%
   filter(type == "location") %>%
@@ -771,7 +771,7 @@ region_dat <- election_dat30 %>%
             num_ads = sum(num_ads)) %>%
   ungroup() %>%
   rename(region = value) %>%
-  mutate(region = str_remove_all(region, ", Greece")) 
+  mutate(region = str_remove_all(region, ", United States")) 
 
 the_colors <- region_dat %>% 
   group_by(Candidate) %>% 
@@ -783,33 +783,77 @@ the_colors <- region_dat %>%
   drop_na(colors) %>% 
   pull(colors)
 
-## Static version
-tm <- treemap(region_dat, index = c("Candidate", "region"),
-              vSize = "total_spend_formatted", 
-              vColor = "Candidate",
-              type = "index",
-              title = "",
-                  align.labels=list(
-        c("right", "bottom"),
-        c("center", "center")
-        ),
-                  fontsize.labels=c(21,10),                # size of labels. Give the size per level of aggregation: size for group, size for subgroup, sub-subgroups...
+if(nrow(region_dat)!=0) {
+  # Static version
+  tm <- treemap(
+    region_dat,
+    index = c("Candidate", "region"),
+    vSize = "total_spend_formatted",
+    vColor = "Candidate",
+    type = "index",
+    title = "", draw = T,
+    align.labels = list(c("right", "bottom"),
+                        c("center", "center")),
+    fontsize.labels = c(21, 10),
+    # size of labels. Give the size per level of aggregation: size for group, size for subgroup, sub-subgroups...
 
-                  fontcolor.labels=c("white","white"),    # Color of labels
-              palette = the_colors)
+    fontcolor.labels = c("white", "white"),
+    # Color of labels
+    palette = the_colors
+  )
+  
+  
+} else {
+  shiny::HTML("No data (yet).")
+}
+# 
+# library(d3treeR)
+# 
+# # make it interactive ("rootname" becomes the title of the plot):
+# inter <- d3tree2( tm,  rootname = "Targeting " )
+# inter
+# # read_csv("../data/PoliticalAds.csv") %>% 
+# #   filter(CountryCode == "turkey")
+# #   count(CountryCode, sort = T)
+# 
+# # ggsave("img/tregion.pdf",width=10, height=8, dpi = 900)
+# 
+# library(highcharter)
+# 
+# library(highcharter)
+# library(dplyr)
 
-
-# read_csv("../data/PoliticalAds.csv") %>% 
-#   filter(CountryCode == "turkey")
-#   count(CountryCode, sort = T)
+# Convert data to hierarchical structure
+# hierarchical_data <- data_to_hierarchical(region_dat, c("Candidate", "region"), "total_spend_formatted", color = the_colors)
+# 
+# # Create treemap
+# hchart(hierarchical_data, type = "treemap", allowDrillToNode = TRUE,
+#       color = the_colors) %>%
+#   hc_title(text = "") %>%
+#   # hc_colorAxis(minColor = "#FFFFFF", maxColor = highchart_palette()[[2]]) %>%
+#   hc_tooltip(
+#     pointFormat = '<b>{point.name}:</b> {point.value}<br/>',
+#     followPointer = TRUE
+#   ) %>%
+#   hc_plotOptions(
+#     treemap = list(
+#       layoutAlgorithm = 'squarified',
+#       dataLabels = list(
+#         enabled = TRUE,
+#         align = 'left',
+#         verticalAlign = 'top',
+#         style = list(fontSize = '15px')
+#       )
+#     )
+#   ) 
 
 ```
 
-
+<!-- ![](img/tregion.pdf) -->
 
 #### Cities
 
-```{r,fig.width=10, fig.height=8, eval =F}
+```{r,fig.width=10, fig.height=8}
 library(treemap)
 region_dat <- election_dat30 %>%
   filter(type == "location") %>%
@@ -826,7 +870,7 @@ region_dat <- election_dat30 %>%
             num_ads = sum(num_ads)) %>%
   ungroup() %>%
   rename(region = value) %>%
-  mutate(region = str_remove_all(region, ", Greece")) 
+  mutate(region = str_remove_all(region, ", United States")) 
 
 the_colors <- region_dat %>% 
   group_by(Candidate) %>% 
@@ -838,20 +882,27 @@ the_colors <- region_dat %>%
   drop_na(colors) %>% 
   pull(colors)
 
-## Static version
-tm <- treemap(region_dat, index = c("Candidate", "region"),
-              vSize = "total_spend_formatted", 
-              vColor = "Candidate",
-              type = "index",
-              title = "",
-                  align.labels=list(
-        c("right", "bottom"),
-        c("center", "center")
-        ),
-                  fontsize.labels=c(21,10),                # size of labels. Give the size per level of aggregation: size for group, size for subgroup, sub-subgroups...
-
-                  fontcolor.labels=c("white","white"),    # Color of labels
-              palette = the_colors)
+if(nrow(region_dat)!=0) {
+  ## Static version
+  tm <- treemap(
+    region_dat,
+    index = c("Candidate", "region"),
+    vSize = "total_spend_formatted",
+    vColor = "Candidate",
+    type = "index",
+    title = "",
+    align.labels = list(c("right", "bottom"),
+                        c("center", "center")),
+    fontsize.labels = c(21, 10),
+    # size of labels. Give the size per level of aggregation: size for group, size for subgroup, sub-subgroups...
+    
+    fontcolor.labels = c("white", "white"),
+    # Color of labels
+    palette = the_colors
+  )
+} else {
+  shiny::HTML("No data (yet).")
+}
 
 
 
@@ -864,18 +915,20 @@ tm <- treemap(region_dat, index = c("Candidate", "region"),
 
 ## Geographical Exclusion 
 
-On Meta, political candidates can also **exclude** certain geographical units. The graphs below show which locations were excluded from seeing political advertisements and how much money the candidates spend on these ads. The bigger the area the more money was spend on ads excluding this location.
+On Meta, political parties can also **exclude** certain geographical units. The graphs below show which locations were excluded from seeing political advertisements and how much money the parties spend on these ads. The bigger the area the more money was spend on ads excluding this location.
 
 
 ::: {.panel-tabset}
 
 
+### `r last30days_string` (Last 30 days)
 
-### `r last30days_string` (Last 30 days) 
 
-<!-- #### Regions -->
+::: {.panel-tabset}
 
-```{r,fig.width=10, fig.height=8, eval = F}
+#### Regions
+
+```{r,fig.width=10, fig.height=8, echo = F}
 library(treemap)
 region_dat <- election_dat30 %>%
   filter(type == "location") %>%
@@ -892,7 +945,7 @@ region_dat <- election_dat30 %>%
             num_ads = sum(num_ads)) %>%
   ungroup() %>%
   rename(region = value) %>%
-  mutate(region = str_remove_all(region, ", Greece")) 
+  mutate(region = str_remove_all(region, ", United States")) 
 
 the_colors <- region_dat %>% 
   group_by(Candidate) %>% 
@@ -904,28 +957,38 @@ the_colors <- region_dat %>%
   drop_na(colors) %>% 
   pull(colors)
 
-## Static version
-tm <- treemap(region_dat, index = c("Candidate", "region"),
-              vSize = "total_spend_formatted", 
-              vColor = "Candidate",
-              type = "index",
-              title = "",
-                  align.labels=list(
-        c("right", "bottom"),
-        c("center", "center")
-        ),
-                  fontsize.labels=c(21,10),                # size of labels. Give the size per level of aggregation: size for group, size for subgroup, sub-subgroups...
+if(nrow(region_dat)!=0) {
+  # Static version
+  tm <- treemap(
+    region_dat,
+    index = c("Candidate", "region"),
+    vSize = "total_spend_formatted",
+    vColor = "Candidate",
+    type = "index",
+    title = "", draw = T,
+    align.labels = list(c("right", "bottom"),
+                        c("center", "center")),
+    fontsize.labels = c(21, 10),
+    # size of labels. Give the size per level of aggregation: size for group, size for subgroup, sub-subgroups...
 
-                  fontcolor.labels=c("white","white"),    # Color of labels
-              palette = the_colors)
-
-
+    fontcolor.labels = c("white", "white"),
+    # Color of labels
+    palette = the_colors
+  )
+  
+  
+} else {
+  shiny::HTML("No data (yet).")
+}
+# 
 
 ```
 
+<!-- ![](img/tregion.pdf) -->
+
 #### Cities
 
-```{r,fig.width=10, fig.height=8, eval = F}
+```{r,fig.width=10, fig.height=8}
 library(treemap)
 region_dat <- election_dat30 %>%
   filter(type == "location") %>%
@@ -942,7 +1005,7 @@ region_dat <- election_dat30 %>%
             num_ads = sum(num_ads)) %>%
   ungroup() %>%
   rename(region = value) %>%
-  mutate(region = str_remove_all(region, ", Greece")) 
+  mutate(region = str_remove_all(region, ", United States")) 
 
 the_colors <- region_dat %>% 
   group_by(Candidate) %>% 
@@ -954,28 +1017,37 @@ the_colors <- region_dat %>%
   drop_na(colors) %>% 
   pull(colors)
 
-## Static version
-tm <- treemap(region_dat, index = c("Candidate", "region"),
-              vSize = "total_spend_formatted", 
-              vColor = "Candidate",
-              type = "index",
-              title = "",
-                  align.labels=list(
-        c("right", "bottom"),
-        c("center", "center")
-        ),
-                  fontsize.labels=c(21,10),                # size of labels. Give the size per level of aggregation: size for group, size for subgroup, sub-subgroups...
-
-                  fontcolor.labels=c("white","white"),    # Color of labels
-              palette = the_colors)
+if(nrow(region_dat)!=0) {
+  ## Static version
+  tm <- treemap(
+    region_dat,
+    index = c("Candidate", "region"),
+    vSize = "total_spend_formatted",
+    vColor = "Candidate",
+    type = "index",
+    title = "",
+    align.labels = list(c("right", "bottom"),
+                        c("center", "center")),
+    fontsize.labels = c(21, 10),
+    # size of labels. Give the size per level of aggregation: size for group, size for subgroup, sub-subgroups...
+    
+    fontcolor.labels = c("white", "white"),
+    # Color of labels
+    palette = the_colors
+  )
+} else {
+  shiny::HTML("No data (yet).")
+}
 
 
 
 ```
 
 
+:::
 
-::: 
+:::
+
 
 ## Age Targeting
 
@@ -1266,7 +1338,7 @@ charts <- gender_targeting %>%
 ```
 
 
-```{r echo=FALSE, results='asis', eval =F}
+```{r echo=FALSE, results='asis', eval =T}
 
 # Map each plot to a column
 columns <- map(charts, ~ div(style = "width: 50%; float: left;", .x))
@@ -1342,7 +1414,7 @@ charts <- gender_targeting %>%
 
 
 
-```{r echo=FALSE, results='asis', eval =F}
+```{r echo=FALSE, results='asis', eval =T}
 
 # Map each plot to a column
 columns <- map(charts, ~ div(style = "width: 50%; float: left;", .x))
@@ -1382,7 +1454,7 @@ The graphs below show targeting by education levels and how much percentage of C
 
 ### `r last30days_string` (Last 30 days)
 
-```{r, fig.width= 8, fig.height=5, dpi = 300, eval =F, results='asis'}
+```{r, fig.width= 8, fig.height=5, dpi = 300, eval =T, results='asis'}
 
 
 calc_edu_perc <- function(x) {
@@ -1423,6 +1495,7 @@ x %>%
 }
 
 educ_targeting <- election_dat30 %>% 
+  # filter(Candidate != "Will Hurd") %>% 
     group_split(Candidate) %>% 
     map_dfr(calc_edu_perc) %>% 
      # mutate(coalition = fct_relevel(coalition, c("Coalizione di centro-sinistra",
@@ -1472,7 +1545,9 @@ charts <- educ_targeting %>%
 # Map each plot to a column
 columns <- map(charts, ~ div(style = "width: 50%; float: left;", .x))
 
-# If there's an odd number of plots, add an empty div to the end to balance the columns
+if(length(columns)!=0){
+  
+  # If there's an odd number of plots, add an empty div to the end to balance the columns
 if (length(columns) %% 2 == 1) {
   columns <- c(columns, list(div(style = "width: 50%; float: left;")))
 }
@@ -1487,15 +1562,23 @@ rows <- map(seq(from = 1, to = length(columns), by = 2), ~ {
   )
 })
 
+
+
 # Print the rows
 tags$div(class = "container", do.call(tags$div, rows))
+  
+} else {
+  shiny::HTML("No data (yet).")
+}
+
+
 
 
 ```
 
 ### `r last7days_string` (Last 7 days)
 
-```{r, fig.width= 8, fig.height=5, dpi = 300, eval =F, results='asis'}
+```{r, fig.width= 8, fig.height=5, dpi = 300, eval =T, results='asis'}
 
 educ_targeting <- election_dat7 %>% 
     group_split(Candidate) %>% 
@@ -1547,7 +1630,9 @@ charts <- educ_targeting %>%
 # Map each plot to a column
 columns <- map(charts, ~ div(style = "width: 50%; float: left;", .x))
 
-# If there's an odd number of plots, add an empty div to the end to balance the columns
+if(length(columns)!=0){
+  
+  # If there's an odd number of plots, add an empty div to the end to balance the columns
 if (length(columns) %% 2 == 1) {
   columns <- c(columns, list(div(style = "width: 50%; float: left;")))
 }
@@ -1562,8 +1647,15 @@ rows <- map(seq(from = 1, to = length(columns), by = 2), ~ {
   )
 })
 
+
 # Print the rows
 tags$div(class = "container", do.call(tags$div, rows))
+  
+} else {
+  shiny::HTML("No data (yet).")
+}
+
+
 
 
 ```
@@ -1574,7 +1666,7 @@ tags$div(class = "container", do.call(tags$div, rows))
 
 ## Job Targeting
 
-The graphs below show targeting by job (sectors) and how much percentage of Candidate budgets were spent on them.
+The graphs below show targeting by job (sectors) and how much percentage of Candidate budgets were spent on them. This may also include household income.
 
 
 > Note: targeting criteria can overlap so the percentages do not sum up to 100%.
@@ -1682,7 +1774,9 @@ charts <- job_targeting %>%
 # Map each plot to a column
 columns <- map(charts, ~ div(style = "width: 50%; float: left;", .x))
 
-# If there's an odd number of plots, add an empty div to the end to balance the columns
+if(length(columns)!=0){
+  
+  # If there's an odd number of plots, add an empty div to the end to balance the columns
 if (length(columns) %% 2 == 1) {
   columns <- c(columns, list(div(style = "width: 50%; float: left;")))
 }
@@ -1697,47 +1791,118 @@ rows <- map(seq(from = 1, to = length(columns), by = 2), ~ {
   )
 })
 
+
+
 # Print the rows
 tags$div(class = "container", do.call(tags$div, rows))
+  
+} else {
+  shiny::HTML("No data (yet).")
+}
+
+
 
 
 ```
 
+
+### `r last7days_string` (Last 7 days)
+
+
+
+```{r, fig.width= 11, fig.height=8, dpi = 300}
+
+
+job_targeting <- election_dat7 %>% 
+    group_split(Candidate) %>% 
+    map_dfr(calc_jobs_perc) %>% 
+    filter(perc >= 0.015) %>% 
+    filter(str_detect(value, relationshipstuff, negate = T)) %>% 
+     # mutate(coalition = fct_relevel(coalition, c("Coalizione di centro-sinistra",
+     #                              "Terzo Polo",
+     #                              "Coalizione di centro-destra"))) %>% 
+    group_by(Candidate) %>% 
+    arrange(desc(perc)) %>% 
+    slice(1:20) %>% 
+    mutate(value = fct_reorder(value, perc)) 
+
+
+
+
+# Determine the maximum value for xlim
+max_x <- max(job_targeting$perc*100)
+
+# Create the charts
+charts <- job_targeting %>%
+  mutate(spend_perlab = scales::comma(round(spend_per))) %>% 
+  mutate(perc = perc * 100) %>% 
+  split(.$Candidate) %>%
+  map(~ {
+    the_color <- color_dat$colors[color_dat$Candidate == .x$Candidate[1]]
+    hchart(.x, type = "bar", hcaes(x = value, y = perc), color = the_color) %>%
+      hc_plotOptions(bar = list(horizontal = TRUE, stacking = "normal")) %>%
+      hc_yAxis(title = list(text = "% Candidate Budget spent on targeting method"),
+        max = max_x) %>%   # Set the maximum x-axis value) %>%
+      hc_xAxis(
+        title = "",
+        labels = list(style = list(fontSize = "10px"))
+      ) %>%
+      hc_add_theme(hc_theme_google()) %>%
+      highcharter::hc_tooltip(
+        pointFormat = paste0("<b>{point.value}</b><br>% of Total Budget Spent: {point.y:.1f}%<br>Spend a total of ", currency_symbol, "{point.spend_perlab} on this job (sector)"),
+        headerFormat = ""
+      ) %>%
+      hc_title(text = unique(.x$Candidate), align = "left", style = list(fontWeight = "bold")) %>% 
+      hc_size(height = 300) %>%
+    hc_exporting(
+      enabled = TRUE
+    )
+  })
+
+
+
+
+    
+```
+
+
+```{r echo=FALSE, results='asis'}
+
+# Map each plot to a column
+columns <- map(charts, ~ div(style = "width: 50%; float: left;", .x))
+
+if(length(columns)!=0){
+  
+  # If there's an odd number of plots, add an empty div to the end to balance the columns
+if (length(columns) %% 2 == 1) {
+  columns <- c(columns, list(div(style = "width: 50%; float: left;")))
+}
+
+# Pair up the columns and wrap them in rows
+rows <- map(seq(from = 1, to = length(columns), by = 2), ~ {
+  div(class = "row",
+    list(
+      columns[[.x]],
+      columns[[.x + 1]]
+    )
+  )
+})
+
+
+
+# Print the rows
+tags$div(class = "container", do.call(tags$div, rows))
+  
+} else {
+  shiny::HTML("No data (yet).")
+}
+
+
+
+
+```
+
+
+
+
 :::
-
-<!-- ### `r last7days_string` (Last 7 days) -->
-
-<!-- ```{r, fig.width=14, fig.height=9, dpi=300} -->
-
-
-<!-- election_dat7 %>%  -->
-<!--     group_split(Candidate) %>%  -->
-<!--     map_dfr(calc_jobs_perc) %>%  -->
-<!--     filter(perc >= 0.015) %>%  -->
-<!--     filter(str_detect(value, relationshipstuff, negate = T)) %>%  -->
-<!--      # mutate(coalition = fct_relevel(coalition, c("Coalizione di centro-sinistra", -->
-<!--      #                              "Terzo Polo", -->
-<!--      #                              "Coalizione di centro-destra"))) %>%  -->
-<!--     mutate(value = fct_reorder(value, perc)) %>%  -->
-<!--     ggplot(aes(value, perc, fill = Candidate)) + -->
-<!--     geom_col(alpha = 0.8) + -->
-<!--     facet_wrap(~Candidate, scales = "free") + -->
-<!--     coord_flip() + -->
-<!--     ggthemes::theme_hc() + -->
-<!--     # scale_fill_manual(values = c("#ef3e3e", "#0039aa", "#0a6be1")) + -->
-<!--     theme(legend.position = "none", -->
-<!--           panel.spacing=unit(1,"lines")) + -->
-<!--     scale_y_continuous(labels = scales::percent) + -->
-<!--     # scale_x_discrete(breaks = c("18", "24", -->
-<!--     #                             "34", "44", -->
-<!--     #                             "54", "65+")) + -->
-<!--     labs(y = "% Budget Spend on Jobs") + -->
-<!--     labs(x = "Job (Sectors)\n")  + -->
-<!--   geom_text(size = 3.5, color = "black", vjust="inward",hjust="inward", -->
-<!--              aes(y = perc, label = paste0(round(perc*100, 1), "%")))  + -->
-<!--     scale_x_discrete(label = function(x) stringr::str_trunc(x, 22)) + -->
-<!--     scale_fill_parties() -->
-
-
-
-<!-- ``` -->
