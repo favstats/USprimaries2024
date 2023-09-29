@@ -248,157 +248,7 @@ add_ribbons2 <- function(x, adv, col) {
 ```
 
 
-This section shows *daily* and *total spending* of political candidates in the run-up to the `r election_title` for the latest available data.
-
-## Daily Spend
-
-
-
-```{r, out.width="100%"}
-# more_data %>% 
-#   mutate(under100 = spend == 50)  %>% 
-#     left_join(nl_advertisers %>% rename(advertiser_id = page_id) %>% 
-#                   select(advertiser_id, Candidate))  %>% 
-#   filter(under100) %>% 
-#   filter(Candidate == "VVD")
-
-  # filter(under100) %>% 
-  #   drop_na(Candidate) %>%
-  #   group_by(Candidate) %>% 
-  #   summarize(spend  = sum(spend)) %>% 
-  #   ungroup()
-  # 
-  # 
-  # group_by(Candidate) %>% 
-  # add_count(under100) %>% 
-  # ungroup() %>% 
-  # filter()
-  # 
-  # count(under100)
-
-# nl_advertisers %>% 
-#     filter(Candidate == "SP")
-
-# nlsb %>% 
-#     janitor::clean_names() %>% 
-#     bind_rows(more_data) %>% 
-#     left_join(nl_advertisers %>% rename(advertiser_id = page_id) %>% 
-#                   select(advertiser_id, Candidate)) %>% 
-#     drop_na(Candidate) %>%
-#     group_by(date_produced, Candidate) %>% 
-#     summarize(spend  = sum(spend)) %>% 
-#     ungroup() %>% 
-#     # group_by(Candidate) %>% 
-#     # arrange(date_produced) %>% 
-#     # mutate(spend = cumsum(spend)) %>% 
-#     # filter(Candidate == "SP")
-#     ggplot(aes(date_produced, spend, color = Candidate)) +
-#     geom_line(size = 1.5) +
-#     scale_color_parties() +
-#     facet_wrap(~Candidate, ncol = 3) +
-#     ggthemes::theme_hc() +
-#     theme(legend.position = "none") +
-#     labs(y = "Daily Spend in Euro", x = "Day")
-
-# plotly::ggplotly(ht)
-
-# library(highcharter)
-
-# nlsb %>% 
-#     janitor::clean_names() %>% 
-#     bind_rows(more_data) %>% 
-#     left_join(nl_advertisers %>% rename(advertiser_id = page_id) %>% 
-#                   select(advertiser_id, Candidate)) %>% 
-#     drop_na(Candidate) %>%
-#     group_by(date_produced, Candidate) %>% 
-#     summarize(spend  = sum(spend)) %>% 
-#     ungroup() %>% 
-#   filter(date_produced >= as.Date("2023-03-08"))  %>% 
-#   clipr::write_clip()
-#   hchart('area', hcaes(x = 'date_produced', y = 'spend', group = "Candidate"))
-
-## start here
-more_data <- readr::read_rds("https://github.com/favstats/meta_reports2/raw/main/daily/US.rds")  %>%
-    mutate(date_produced = lubridate::ymd(date)) %>%
-  drop_na(date_produced) %>% 
-    janitor::clean_names()%>% #rename(advertiser_id = page_id) %>%
-    mutate(spend = readr::parse_number(amount_spent_usd)) %>%
-    mutate(spend = ifelse(spend == 100, 50, spend)) %>%
-    # distinct(page_id, .keep_all = T) %>%
-    filter(str_detect(page_name, "Global Space Conference on Climate Change|de Alliantie|PvdA - GroenLinks", negate = T)) %>%
-    mutate(page_id = as.character(page_id)) %>% 
-  filter(cntry == "US") %>% 
-  filter(date_produced >= lubridate::as_date("2023-06-01"))
-
-
-# color_dat <- color_dat %>% mutate(Candidate  =coalition)
-
-# me_advertisers <- read_csv("../data/wtm-advertisers-gr-2023-05-20T08_49_00.571Z.csv")
-hc_data <-  more_data %>%
-  # mutate(advertiser_id = as.character(advertiser_id)) %>%
-    left_join(election_dat30 %>%
-                distinct(internal_id, Candidate) %>% 
-                  select(page_id = internal_id, Candidate)) %>%
-    drop_na(Candidate) %>%
-    group_by(date_produced, Candidate) %>%
-    summarize(spend  = sum(spend)) %>%
-    ungroup() %>%
-  # spread(key = Candidate, value = spend, fill = 0) %>%
-  # arrange(date_produced) %>%
-  # mutate(across(starts_with("50PLUS"):(last_col()), ~cumsum(.), .names = "cumulative_{.col}")) %>%
-  # select(date_produced, starts_with("cumulative")) %>%
-  # rename_with(~str_remove(., "cumulative_"), starts_with("cumulative")) %>%
-  # pivot_longer(-date_produced, names_to = "Candidate", values_to = "spend")  %>%
-  group_by(Candidate) %>%
-  mutate(total_spend = max(spend)) %>%
-  ungroup()  %>%
-  left_join(color_dat, by = "Candidate") %>%
-  mutate(Candidate = as.factor(Candidate)) %>%
-  mutate(Candidate = fct_reorder(Candidate, total_spend))
-
-saveRDS(hc_data, "../data/hc_data.rds")
-
-color_order <- hc_data %>%
-  distinct(Candidate, .keep_all = T) %>%
-  arrange(Candidate) %>%
-  pull(colors)
-
-
-hc_data %>%
-  mutate(`Daily Spend` = spend) %>%
-  mutate(Date = date_produced) %>%
-  hchart("area", hcaes(x = Date, y = `Daily Spend`, group = Candidate, fill = colors)) %>%
-  hc_plotOptions(    area = list(
-      stacking = "normal",
-      lineWidth = 1,
-      marker = list(enabled = FALSE)
-    )) %>%
-  # hc_legend(share = TRUE)%>%
-  hc_colors(color_order)%>%
-  hc_tooltip(
-    shared = TRUE,
-    positioner = JS("function (labelWidth, labelHeight, point) {
-        return { x: 200, y: this.chart.plotTop };
-    }")
-  ) %>%
-  hc_chart(events = list(load = JS("function() {
-  var chart = this;
-  chart.series[0].setVisible(false)
-  chart.series[1].setVisible(false)
-  chart.series[2].setVisible(false)
-  chart.series[3].setVisible(false)
-  chart.series[4].setVisible(false)
-  }"))) 
-# hc_colors(levels(hc_data$Candidate))
-# hc_colors(color_dat$colors[as.character(unique(hc_data$Candidate))])
-
-# color_dat$colors[levels(hc_data$Candidate)]
-
-# more_data %>% 
-#   count(date_produced)
-
-```
-
+This section shows *total* and *daily spending* of political candidates in the run-up to the `r election_title` for the latest available data.
 
 ## Total Spend
 
@@ -538,4 +388,160 @@ eval(parse(text = paste0("gt(the_table7, rowname_col = 'Candidate_col') %>% fmt_
 ```
 
 ::: 
+
+
+
+::: {.panel-tabset}
+
+
+### Cumulative
+
+```{r, out.width="100%"}
+more_data <- readr::read_rds("../lifelong/US.rds")  %>%
+    mutate(date_produced = lubridate::ymd(date)) %>%
+  drop_na(date_produced) %>% 
+    janitor::clean_names()%>% #rename(advertiser_id = page_id) %>%
+    mutate(spend = readr::parse_number(as.character(amount_spent_eur))) %>%
+    # mutate(spend = ifelse(spend == 100, 50, spend)) %>%
+    # distinct(page_id, .keep_all = T) %>%
+    filter(str_detect(page_name, "Global Space Conference on Climate Change|de Alliantie|PvdA - GroenLinks", negate = T)) %>%
+    mutate(page_id = as.character(page_id)) %>% 
+  # filter(cntry == "NL") %>% 
+  filter(date_produced >= lubridate::as_date("2023-06-01"))
+
+
+# me_advertisers <- read_csv("../data/wtm-advertisers-gr-2023-05-20T08_49_00.571Z.csv")
+hc_data_cum_raw <-  more_data %>%
+  # mutate(advertiser_id = as.character(advertiser_id)) %>%
+    left_join(election_dat30 %>%
+                distinct(internal_id, Candidate) %>% 
+                  select(page_id = internal_id, Candidate)) %>%
+    drop_na(Candidate) %>%
+    group_by(date_produced, Candidate) %>%
+    summarize(spend  = sum(spend)) %>%
+    ungroup() %>%
+  group_by(Candidate) %>%
+  mutate(total_spend = max(spend)) %>%
+  ungroup()  %>%
+  left_join(color_dat) %>%
+  mutate(Candidate = as.factor(Candidate)) %>%
+  mutate(Candidate = fct_reorder(Candidate, total_spend))
+
+# saveRDS(hc_data, "../data/hc_data.rds")
+
+color_order <- hc_data_cum_raw %>%
+  distinct(Candidate, .keep_all = T) %>%
+  arrange(Candidate) %>%
+  pull(colors)
+
+# more_data %>% 
+  # mutate(date_produced = lubridate::ymd(date)) %>%
+  # drop_na(date_produced) %>% 
+  # janitor::clean_names() %>% 
+  # distinct(cntry, date_produced, .keep_all = T) %>% 
+  # count(date_produced) %>%
+  # ggplot(aes(date_produced, n)) +
+  # geom_col() +
+  # theme_minimal() +
+  # labs(y = "How many Countries", x = "For each date")
+
+
+```
+
+
+
+```{r, out.width="100%"}
+
+
+hc_data_cumfb <- hc_data_cum_raw %>%
+  mutate(Date = date_produced) %>%
+  group_by(Candidate) %>%  # Assuming you have a 'Candidate' column
+  arrange(Date)  %>%
+ mutate(Daily_Diff = if_else(row_number() == 1, lead(spend) - spend, spend - lag(spend)),
+         `Daily Spend` = cumsum(Daily_Diff)) %>%
+  # mutate(`Daily Spend` = spend - first(spend) + first(spend)) %>% 
+  ungroup() %>% 
+  #   mutate(`Daily Spend` = spend)
+  # # mutate(`Daily Spend` = spend - first(spend)) %>%
+  # # ungroup() %>%
+  # mutate(`Daily Spend` = spend - lag(spend, default = first(spend))) %>%
+  # ungroup()
+  filter(min(Date)!=Date)
+
+hc_data_cumfb %>% 
+  # mutate(spend)
+  hchart("area", hcaes(x = Date, y = `Daily Spend`, group = Candidate, fill = colors)) %>%
+  hc_plotOptions(    area = list(
+      stacking = "normal",
+      lineWidth = 1,
+      marker = list(enabled = FALSE)
+    )) %>%
+  # hc_legend(share = TRUE)%>%
+  hc_colors(color_order)%>%
+  hc_tooltip(
+    shared = TRUE,
+    positioner = JS("function (labelWidth, labelHeight, point) {
+        return { x: 200, y: this.chart.plotTop };
+    }")
+  )
+
+
+
+```
+
+
+
+### Daily
+
+
+
+```{r, out.width="100%"}
+
+# Compute global minimum and maximum date
+hc_data_dafb <- hc_data_cum_raw %>%
+  mutate(Date = date_produced) %>%
+  group_by(Candidate) %>%  
+  arrange(Date) %>%  # Ensure the data is in the correct order
+ mutate(`Daily Spend` = if_else(row_number() == 1, lead(spend) - spend, spend - lag(spend))) %>% 
+  ungroup() %>% 
+  filter(min(Date)!=Date)
+
+hc_data_dafb %>% 
+  # mutate(spend)
+  hchart("area", hcaes(x = Date, y = `Daily Spend`, group = Candidate, fill = colors)) %>%
+  hc_plotOptions(    area = list(
+      stacking = "normal",
+      lineWidth = 1,
+      marker = list(enabled = FALSE)
+    )) %>%
+  # hc_legend(share = TRUE)%>%
+  hc_colors(color_order)%>%
+  hc_tooltip(
+    shared = TRUE,
+    positioner = JS("function (labelWidth, labelHeight, point) {
+        return { x: 200, y: this.chart.plotTop };
+    }")
+  )  #%>%
+   # hc_chart(events = list(load = JS("function() {
+   # var chart = this;
+   # chart.series[0].setVisible(false)
+   # chart.series[1].setVisible(false)
+   # chart.series[2].setVisible(false)
+   # chart.series[3].setVisible(false)
+   # chart.series[4].setVisible(false)
+   # }"))) 
+# hc_colors(levels(hc_data$Candidate))
+# hc_colors(color_dat$colors[as.character(unique(hc_data$Candidate))])
+
+# color_dat$colors[levels(hc_data$Candidate)]
+
+# more_data %>% 
+#   count(date_produced)
+```
+
+::: 
+
+
+
+
 
