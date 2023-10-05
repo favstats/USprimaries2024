@@ -562,7 +562,7 @@ generate_plots <- function(data, exclusion = F) {
           headerFormat = ""
         ) %>%
         hc_title(
-          text = unique(.x$party),
+          text = unique(.x$Candidate),
           align = "left",
           style = list(fontWeight = "bold")
         ) %>%
