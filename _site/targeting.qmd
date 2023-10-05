@@ -430,18 +430,18 @@ Here, we show the *top targeted audiences* for each Candidate for the "detailed"
 ```{r}
 
 byparty30 <- election_dat30 %>% 
-  distinct(internal_id, party, .keep_all = T) %>% 
-  group_by(party) %>% 
+  distinct(internal_id, Candidate, .keep_all = T) %>% 
+  group_by(Candidate) %>% 
   summarize(total_spenderino = sum(total_spend_formatted)) %>% 
   ungroup() %>% 
-  select(party, total_spenderino)
+  select(Candidate, total_spenderino)
 
 byparty7 <- election_dat7 %>% 
-  distinct(internal_id, party, .keep_all = T) %>% 
-  group_by(party) %>% 
+  distinct(internal_id, Candidate, .keep_all = T) %>% 
+  group_by(Candidate) %>% 
   summarize(total_spenderino = sum(total_spend_formatted)) %>% 
   ungroup() %>% 
-  select(party, total_spenderino)
+  select(Candidate, total_spenderino)
 
 interest_targeting30 <-  election_dat30 %>% 
     mutate(total_spend = total_spend_formatted) %>% 
@@ -454,14 +454,14 @@ interest_targeting30 <-  election_dat30 %>%
     # left_join(us_advertisers %>% rename(internal_id = page_id)) %>%
     # drop_na(left_vs_right) %>%
     mutate(value = paste0(detailed_type,": ", value)) %>% 
-    group_by(party, value, is_exclusion, detailed_type) %>%
+    group_by(Candidate, value, is_exclusion, detailed_type) %>%
     summarise(total_spend = sum(total_spend)) %>%
     ungroup() %>%
     arrange(desc(total_spend)) 
 
 # election_dat30 %>% 
 #     filter(!is_exclusion) %>% 
-#     group_by(party)
+#     group_by(Candidate)
 #     ggplot(aes())
     
 contested_dat30 <- interest_targeting30 %>% 
@@ -471,7 +471,7 @@ contested_dat30 <- interest_targeting30 %>%
   # add_count(value) %>% 
   # filter(n >= 5) %>% 
   left_join(byparty30) %>% 
-  group_by(party) %>% 
+  group_by(Candidate) %>% 
   # mutate(total_spenderino = sum(total_spend)) %>% 
   mutate(perc = total_spend/total_spenderino) %>%
   mutate(value = str_remove_all(value, "INTERESTS: |DEMOGRAPHICS: |BEHAVIORS: ")) #%>%
@@ -490,14 +490,14 @@ interest_targeting7 <-  election_dat7 %>%
     # left_join(us_advertisers %>% rename(internal_id = page_id)) %>%
     # drop_na(left_vs_right) %>%
     mutate(value = paste0(detailed_type,": ", value)) %>% 
-    group_by(party, value, is_exclusion, detailed_type) %>%
+    group_by(Candidate, value, is_exclusion, detailed_type) %>%
     summarise(total_spend = sum(total_spend)) %>%
     ungroup() %>%
     arrange(desc(total_spend)) 
 
 # election_dat30 %>% 
 #     filter(!is_exclusion) %>% 
-#     group_by(party)
+#     group_by(Candidate)
 #     ggplot(aes())
     
 contested_dat7 <- interest_targeting7 %>% 
@@ -506,7 +506,7 @@ contested_dat7 <- interest_targeting7 %>%
   filter(total_spend >= 1) %>%
   # add_count(value) %>% 
   left_join(byparty7) %>% 
-  group_by(party) %>% 
+  group_by(Candidate) %>% 
   # mutate(total_spenderino = sum(total_spend)) %>% 
   mutate(perc = total_spend/total_spenderino) %>%
   mutate(value = str_remove_all(value, "INTERESTS: |DEMOGRAPHICS: |BEHAVIORS: ")) #%>%
