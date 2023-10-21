@@ -134,6 +134,14 @@ A list of election dashboards:
 + `r emo::ji("tr")` [2023 Turkish Presidential election](https://favstats.github.io/TurkishElection2023/) (14 May 2023) - Round 2
 + `r emo::ji("montenegro")` [2023 Montenegrin parliamentary elections](https://favstats.github.io/2023MontenegrinParliamentaryElection/) (11 June 2023)
 + `r emo::ji("greece")` [2nd 2023 Greek Legislative election](https://favstats.github.io/2ndGreeceElection2023/) (25 May 2023)
++ `r emo::ji("slovakia")` [2023 Slovak parliamentary election](https://favstats.github.io/slovakia2023/) (30 September 2023)
++ `r emo::ji("germany")` [2023 Bavarian state election](https://favstats.github.io/LTW2023/bavaria) (8 October 2023)
++ `r emo::ji("germany")` [2023 Hessian state election](https://favstats.github.io/LTW2023/hessen) (8 October 2023)
++ 🇳🇿 [2023 New Zealand general election](https://favstats.github.io/NZ2023/) (14 October 2023)
++ `r emo::ji("poland")` [2023 Polish parliamentary election](https://favstats.github.io/poland2023/) (15 October 2023)
++ `r emo::ji("us")` [US Presidential Primaries](https://favstats.github.io/USprimaries2024/) (2023-2024)
+
+
 
 
 
