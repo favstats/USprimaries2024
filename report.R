@@ -51,15 +51,7 @@ print("installed playwright")
 
 
 # conda_install(packages = "fcntl", pip = T)
-<<<<<<< HEAD
-<<<<<<< HEAD
-pw_init(use_xvfb = F)
-=======
 pw_init(use_xvfb = T)
->>>>>>> bdbb651fa6d1d556e1187d002d09d5a75f45be84
-=======
-pw_init(use_xvfb = T)
->>>>>>> bdbb651fa6d1d556e1187d002d09d5a75f45be84
 print("pw initted")
 # Launch the browser
 system("playwright install")
